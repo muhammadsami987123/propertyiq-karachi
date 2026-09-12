@@ -3,8 +3,8 @@
 {% block description %}Sale, rental, and market intelligence for a Karachi locality.{% endblock %}
 
 {% block head %}
-<link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
-<script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script id="loc-context" type="application/json">{ "slug": {{ slug | default("") | tojson }} }</script>
 {% endblock %}
@@ -184,21 +184,27 @@
       ? nearby.map((n) => `<a href="/karachi/${encodeURIComponent(n.slug)}" class="chip">${escapeHtml(n.name)}</a>`).join("")
       : `<p class="text-xs text-[var(--text-dim)]">No nearby areas recorded.</p>`;
 
-    // Mini map
-    if (loc.latitude && loc.longitude) {
-      const miniMap = new maplibregl.Map({
-        container: "loc-minimap",
-        style: "https://tiles.openfreemap.org/styles/liberty",
-        center: [loc.longitude, loc.latitude],
-        zoom: 13,
-        interactive: true,
-        attributionControl: false,
-      });
-      miniMap.on("load", () => {
-        new maplibregl.Marker({ color: "#22d3ee" }).setLngLat([loc.longitude, loc.latitude]).addTo(miniMap);
-      });
-    } else {
-      document.getElementById("loc-minimap").innerHTML = `<div class="p-4 text-xs text-[var(--text-dim)]">Map position unavailable.</div>`;
+    // Mini map (best-effort; never block the rest of the page on this)
+    try {
+      if (loc.latitude && loc.longitude && typeof maplibregl !== "undefined") {
+        const miniMap = new maplibregl.Map({
+          container: "loc-minimap",
+          style: "https://tiles.openfreemap.org/styles/liberty",
+          center: [loc.longitude, loc.latitude],
+          zoom: 13,
+          interactive: true,
+          attributionControl: false,
+        });
+        miniMap.on("load", () => {
+          new maplibregl.Marker({ color: "#22d3ee" }).setLngLat([loc.longitude, loc.latitude]).addTo(miniMap);
+        });
+      } else {
+        document.getElementById("loc-minimap").innerHTML = `<div class="p-4 text-xs text-[var(--text-dim)]">Map position unavailable.</div>`;
+      }
+    } catch (err) {
+      console.error("Mini-map failed to initialize.", err);
+      const el = document.getElementById("loc-minimap");
+      if (el) el.innerHTML = `<div class="p-4 text-xs text-[var(--text-dim)]">Map preview is currently unavailable.</div>`;
     }
   })();
 </script>

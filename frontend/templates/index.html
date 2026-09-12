@@ -3,8 +3,8 @@
 {% block bodyclass %}overflow-hidden{% endblock %}
 
 {% block head %}
-<link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
-<script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
   html, body { height: 100%; }
@@ -136,10 +136,19 @@
     close: document.getElementById("panel-close"),
   });
 
-  const map = initMap({
-    container: "map",
-    onSelect: (locationId) => openPanelForLocation(locationId),
-  });
+  let map = null;
+  try {
+    map = initMap({
+      container: "map",
+      onSelect: (locationId) => openPanelForLocation(locationId),
+    });
+  } catch (err) {
+    console.error("Map failed to initialize; search and filters remain available.", err);
+    const mapEl = document.getElementById("map");
+    if (mapEl) {
+      mapEl.innerHTML = '<div class="glass fade-in" style="position:absolute;top:5rem;left:1rem;right:1rem;max-width:420px;padding:.75rem 1rem;border-radius:10px;"><p class="error-inline" style="border:none;background:none;padding:0;">The interactive map is currently unavailable. Use search or <a href="/explore" class="underline">Explore</a> to browse localities.</p></div>';
+    }
+  }
 
   initSearch({
     input: document.getElementById("global-search"),
