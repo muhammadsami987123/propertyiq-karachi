@@ -11,6 +11,7 @@ import csv
 import io
 import json
 import os
+import secrets
 from typing import Any
 
 from fastapi import APIRouter, Depends, Header, HTTPException, UploadFile, File
@@ -38,7 +39,9 @@ MAX_UPLOAD_BYTES = 5 * 1024 * 1024
 
 
 def require_admin_token(x_admin_token: str | None = Header(default=None)) -> None:
-    if not x_admin_token or x_admin_token != settings.ADMIN_TOKEN:
+    # Use a constant-time comparison so response latency can't leak how many
+    # leading characters of a guessed token were correct (timing attack).
+    if not x_admin_token or not secrets.compare_digest(x_admin_token, settings.ADMIN_TOKEN):
         raise HTTPException(status_code=401, detail="Invalid or missing admin token.")
 
 
