@@ -1,13 +1,13 @@
 {% extends "_base.html" %}
 {% block title %}Methodology — PropertyIQ{% endblock %}
 {% block description %}How PropertyIQ classifies data, measures confidence, and where the limitations lie.{% endblock %}
-{% block nav_methodology %}btn-active{% endblock %}
+{% block nav_methodology %}nav-link-active{% endblock %}
 
 {% block mainclass %}max-w-3xl mx-auto px-4 sm:px-6 py-10{% endblock %}
 {% block content %}
 <article class="space-y-10">
   <header>
-    <h1 class="text-2xl sm:text-3xl font-bold">Methodology</h1>
+    <h1 class="text-3xl sm:text-4xl font-serif font-medium">Methodology</h1>
     <p class="text-sm text-[var(--text-dim)] mt-2">
       PropertyIQ is built on the principle that a number is only useful if you know how confident to be in it.
       This page explains how our data is classified, how confidence is calculated, and where the honest limits are.
@@ -21,18 +21,18 @@
       next to the number it describes.
     </p>
     <div class="grid gap-3">
-      <div class="glass rounded-lg p-4">
+      <div class="glass rounded-[3px] p-4">
         <div class="flex items-center gap-2 mb-1"><span class="badge badge-high">Verified</span></div>
         <p class="text-sm text-[var(--text-dim)]">Sourced from a documented transaction, registered listing, or an authoritative
         third-party record we can trace to origin. Verified figures carry the highest weight in any comparison or calculation.</p>
       </div>
-      <div class="glass rounded-lg p-4">
+      <div class="glass rounded-[3px] p-4">
         <div class="flex items-center gap-2 mb-1"><span class="badge badge-medium">Research estimate</span></div>
         <p class="text-sm text-[var(--text-dim)]">Derived from multiple listings, agent input, or aggregated public sources,
         cross-checked for plausibility but not independently verified against a single authoritative record. This is the
         majority of what you will see on the platform, and it is labeled as such rather than presented as fact.</p>
       </div>
-      <div class="glass rounded-lg p-4">
+      <div class="glass rounded-[3px] p-4">
         <div class="flex items-center gap-2 mb-1"><span class="badge badge-demo">Demo</span></div>
         <p class="text-sm text-[var(--text-dim)]">Placeholder or illustrative data used where real observations do not yet
         exist for a locality or property type. Demo data is never used to support an investment decision and is always

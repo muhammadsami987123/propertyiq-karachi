@@ -6,11 +6,11 @@
 {% block content %}
 <div class="space-y-8">
   <header>
-    <h1 class="text-2xl font-bold">Admin</h1>
+    <h1 class="text-2xl font-serif font-medium">Admin</h1>
     <p class="text-sm text-[var(--text-dim)] mt-1">Internal data-management tool. Not part of the public product surface.</p>
   </header>
 
-  <section class="glass rounded-xl p-5">
+  <section class="glass rounded-[3px] p-5">
     <label class="field-label" for="admin-token">Admin token</label>
     <div class="flex gap-2 max-w-md">
       <input id="admin-token" type="password" class="field" placeholder="Paste admin token…" autocomplete="off" />
@@ -20,7 +20,7 @@
     <p class="text-[11px] text-[var(--text-faint)] mt-1">Stored in memory for this tab only. Never persisted or logged.</p>
   </section>
 
-  <section class="glass rounded-xl p-5 space-y-4">
+  <section class="glass rounded-[3px] p-5 space-y-4">
     <h2 class="text-sm font-semibold">Add / edit location</h2>
     <form id="loc-form" class="grid sm:grid-cols-2 gap-3">
       <div><label class="field-label" for="f-name">Name</label><input id="f-name" name="name" class="field" required /></div>
@@ -34,7 +34,7 @@
     <div id="loc-form-result"></div>
   </section>
 
-  <section class="glass rounded-xl p-5 space-y-4">
+  <section class="glass rounded-[3px] p-5 space-y-4">
     <h2 class="text-sm font-semibold">Add / update market record</h2>
     <form id="market-form" class="grid sm:grid-cols-2 gap-3">
       <div><label class="field-label" for="m-loc-id">Location ID</label><input id="m-loc-id" name="location_id" class="field" required /></div>
@@ -53,7 +53,7 @@
     <div id="market-form-result"></div>
   </section>
 
-  <section class="glass rounded-xl p-5 space-y-4">
+  <section class="glass rounded-[3px] p-5 space-y-4">
     <h2 class="text-sm font-semibold">Bulk import</h2>
     <div class="grid sm:grid-cols-2 gap-4">
       <div>
@@ -71,7 +71,7 @@
     </div>
   </section>
 
-  <section class="glass rounded-xl p-5 space-y-3">
+  <section class="glass rounded-[3px] p-5 space-y-3">
     <div class="flex items-center justify-between">
       <h2 class="text-sm font-semibold">Data sources (read-only)</h2>
       <button id="sources-refresh" class="btn">Refresh</button>

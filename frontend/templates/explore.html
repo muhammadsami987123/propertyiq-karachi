@@ -1,13 +1,13 @@
 {% extends "_base.html" %}
 {% block title %}Explore Localities — PropertyIQ{% endblock %}
 {% block description %}Browse and search all Karachi localities tracked by PropertyIQ.{% endblock %}
-{% block nav_explore %}btn-active{% endblock %}
+{% block nav_explore %}nav-link-active{% endblock %}
 
 {% block content %}
-<div class="space-y-6">
+<div class="space-y-8 max-w-3xl">
   <div>
-    <h1 class="text-2xl sm:text-3xl font-bold">Explore Karachi Localities</h1>
-    <p class="text-sm text-[var(--text-dim)] mt-1">A text-based way to reach any location — no map required.</p>
+    <h1 class="text-3xl sm:text-4xl font-medium">Every locality PropertyIQ tracks</h1>
+    <p class="text-[var(--text-dim)] mt-2">A text-based way to reach any location, for anyone who'd rather not use the map.</p>
   </div>
 
   <div class="flex flex-col sm:flex-row gap-3">
@@ -22,7 +22,8 @@
 
   <div id="explore-live" class="sr-only" aria-live="polite"></div>
   <div id="explore-status"></div>
-  <div id="explore-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+  <div id="explore-count" class="text-sm text-[var(--text-dim)]"></div>
+  <div id="explore-list" class="ledger"></div>
 </div>
 {% endblock %}
 
@@ -31,7 +32,8 @@
   import { api } from "/static/js/api.js";
   import { debounce } from "/static/js/format.js";
 
-  const grid = document.getElementById("explore-grid");
+  const list = document.getElementById("explore-list");
+  const countEl = document.getElementById("explore-count");
   const status = document.getElementById("explore-status");
   const live = document.getElementById("explore-live");
   const searchInput = document.getElementById("explore-search");
@@ -43,28 +45,28 @@
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   }
 
-  function render(list) {
-    grid.innerHTML = "";
-    if (list.length === 0) {
-      grid.innerHTML = `<p class="empty-inline col-span-full">No localities match your search.</p>`;
+  function render(rows) {
+    list.innerHTML = "";
+    countEl.textContent = "";
+    if (rows.length === 0) {
+      list.innerHTML = `<p class="empty-inline">No localities match your search.</p>`;
       live.textContent = "No results.";
       return;
     }
-    live.textContent = `${list.length} localities found.`;
-    list.forEach((loc) => {
-      const card = document.createElement("a");
-      card.href = `/karachi/${encodeURIComponent(loc.slug)}`;
-      card.className = "glass rounded-xl p-4 flex flex-col gap-2 hover:border-white/30 transition-colors duration-200 min-h-[44px]";
-      card.innerHTML = `
-        <div class="flex items-start justify-between gap-2">
-          <div>
-            <div class="font-semibold">${escapeHtml(loc.name)}</div>
-            <div class="text-xs text-[var(--text-dim)]">${escapeHtml(loc.town || "")}</div>
-          </div>
-          <span class="badge badge-demo shrink-0">${escapeHtml(loc.market_category || "—")}</span>
+    countEl.textContent = `${rows.length} ${rows.length === 1 ? "locality" : "localities"}`;
+    live.textContent = `${rows.length} localities found.`;
+    rows.forEach((loc) => {
+      const row = document.createElement("a");
+      row.href = `/karachi/${encodeURIComponent(loc.slug)}`;
+      row.className = "ledger-row min-h-[44px]";
+      row.innerHTML = `
+        <div class="flex-1 min-w-0">
+          <div class="lr-name">${escapeHtml(loc.name)}</div>
+          <div class="lr-meta">${escapeHtml(loc.town || "")}</div>
         </div>
+        <span class="badge badge-demo shrink-0">${escapeHtml(loc.market_category || "—")}</span>
       `;
-      grid.appendChild(card);
+      list.appendChild(row);
     });
   }
 

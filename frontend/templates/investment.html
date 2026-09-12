@@ -1,15 +1,15 @@
 {% extends "_base.html" %}
-{% block title %}Investment Calculator — PropertyIQ{% endblock %}
+{% block title %}Investment calculator — PropertyIQ{% endblock %}
 {% block description %}Estimate mortgage payments, rental yield, and cash-on-cash return for a Karachi property investment.{% endblock %}
-{% block nav_investment %}btn-active{% endblock %}
+{% block nav_investment %}nav-link-active{% endblock %}
 
 {% block content %}
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
   <div>
-    <h1 class="text-2xl sm:text-3xl font-bold mb-1">Investment Calculator</h1>
+    <h1 class="text-3xl sm:text-4xl font-serif font-medium mb-1">Investment calculator</h1>
     <p class="text-sm text-[var(--text-dim)] mb-6">Model the economics of a purchase before you commit.</p>
 
-    <form id="calc-form" class="glass rounded-xl p-5 space-y-4">
+    <form id="calc-form" class="glass rounded-[3px] p-5 space-y-4">
       <div class="grid grid-cols-2 gap-3">
         <div>
           <label class="field-label" for="purchase_price">Purchase price (PKR)</label>
@@ -59,9 +59,9 @@
 
   <div>
     <div class="flex items-center justify-between mb-4">
-      <h2 class="text-sm font-semibold text-[var(--text-dim)] uppercase tracking-wide">Results</h2>
+      <h2 class="text-sm text-[var(--text-dim)]">Results</h2>
       <label class="flex items-center gap-2 text-xs text-[var(--text-dim)] cursor-pointer">
-        <input type="checkbox" id="pkr-style-toggle" checked class="accent-cyan" />
+        <input type="checkbox" id="pkr-style-toggle" checked class="accent-[#c6a24d]" />
         Lakh / Crore format
       </label>
     </div>
@@ -75,7 +75,7 @@
     </div>
 
     <div class="mt-8">
-      <h2 class="text-sm font-semibold text-[var(--text-dim)] uppercase tracking-wide mb-3">Saved calculations</h2>
+      <h2 class="text-sm text-[var(--text-dim)] mb-3">Saved calculations</h2>
       <div id="calc-saved-list" class="space-y-2"></div>
     </div>
   </div>

@@ -42,7 +42,7 @@ async function loadBoundary() {
       id: "boundary-line",
       type: "line",
       source: "karachi-boundary",
-      paint: { "line-color": "#22d3ee", "line-width": 1.25, "line-opacity": 0.35 },
+      paint: { "line-color": "#c6a24d", "line-width": 1.25, "line-opacity": 0.4 },
     });
   } catch (_) {
     /* style not ready or bad geometry — non-fatal */
@@ -68,8 +68,8 @@ async function loadLocalities() {
     type: "fill",
     source: "localities",
     paint: {
-      "fill-color": "#22d3ee",
-      "fill-opacity": 0.18,
+      "fill-color": "#3a4f5c",
+      "fill-opacity": 0.22,
     },
   });
 
@@ -81,10 +81,10 @@ async function loadLocalities() {
       "line-color": [
         "case",
         ["boolean", ["feature-state", "selected"], false],
-        "#f5a623",
+        "#c6a24d",
         ["boolean", ["feature-state", "hover"], false],
-        "#67e8f9",
-        "rgba(255,255,255,0.25)",
+        "#d9bd7c",
+        "rgba(150,167,175,0.4)",
       ],
       "line-width": [
         "case",
@@ -144,7 +144,7 @@ function buildTooltipHTML(props) {
     <div class="map-tooltip">
       <div class="t-name">${name}</div>
       <div class="t-row"><span>Market</span><span>${category}</span></div>
-      <div class="t-cta">Click to explore →</div>
+      <div class="t-cta">Click to open the full picture</div>
     </div>
   `;
 }
@@ -221,8 +221,8 @@ function showMapError(message) {
 export function applyHeatmap(values, legendInfo) {
   if (!map || !map.getLayer("localities-fill")) return;
   if (!values || values.length === 0) {
-    map.setPaintProperty("localities-fill", "fill-color", "#22d3ee");
-    map.setPaintProperty("localities-fill", "fill-opacity", 0.18);
+    map.setPaintProperty("localities-fill", "fill-color", "#3a4f5c");
+    map.setPaintProperty("localities-fill", "fill-opacity", 0.22);
     return;
   }
   const min = legendInfo?.min ?? Math.min(...values.map((v) => v.value));
@@ -252,11 +252,11 @@ export function applyHeatmap(values, legendInfo) {
 }
 
 function interpolateColor(t) {
-  // deep teal -> cyan -> amber, matching the legend gradient
+  // slate -> muted steel -> brass, matching the legend gradient
   const stops = [
-    [10, 58, 68],
-    [34, 211, 238],
-    [245, 166, 35],
+    [34, 53, 65],
+    [111, 133, 144],
+    [198, 162, 77],
   ];
   const seg = t < 0.5 ? 0 : 1;
   const localT = t < 0.5 ? t / 0.5 : (t - 0.5) / 0.5;

@@ -13,11 +13,11 @@
 <div id="loc-loading" class="space-y-4">
   <div class="skeleton h-8 w-1/2"></div>
   <div class="skeleton h-4 w-1/3"></div>
-  <div class="skeleton h-64 w-full rounded-xl"></div>
+  <div class="skeleton h-64 w-full rounded-[3px]"></div>
 </div>
 
 <div id="loc-notfound" hidden class="text-center py-24 space-y-3">
-  <h1 class="text-2xl font-bold">Location not found</h1>
+  <h1 class="text-2xl font-serif font-medium">Location not found</h1>
   <p class="text-sm text-[var(--text-dim)]">We couldn't find a Karachi locality matching this address.</p>
   <a href="/explore" class="btn btn-primary inline-flex mt-2">Browse all localities</a>
 </div>
@@ -25,7 +25,7 @@
 <div id="loc-content" hidden class="space-y-8">
   <header class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
     <div>
-      <h1 id="loc-name" class="text-2xl sm:text-3xl font-bold"></h1>
+      <h1 id="loc-name" class="text-3xl sm:text-4xl font-serif font-medium"></h1>
       <p id="loc-town" class="text-sm text-[var(--text-dim)] mt-1"></p>
     </div>
     <span id="loc-category" class="badge badge-demo"></span>
@@ -34,40 +34,40 @@
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
     <div class="lg:col-span-2 space-y-6">
       <section>
-        <h2 class="text-sm font-semibold text-[var(--text-dim)] uppercase tracking-wide mb-3">Sale market</h2>
+        <h2 class="text-sm text-[var(--text-dim)] mb-3">Sale market</h2>
         <div id="loc-sale" class="grid sm:grid-cols-2 gap-3"></div>
       </section>
 
       <section>
-        <h2 class="text-sm font-semibold text-[var(--text-dim)] uppercase tracking-wide mb-3">Rental market</h2>
+        <h2 class="text-sm text-[var(--text-dim)] mb-3">Rental market</h2>
         <div id="loc-rent" class="grid sm:grid-cols-2 gap-3"></div>
       </section>
 
       <section>
-        <h2 class="text-sm font-semibold text-[var(--text-dim)] uppercase tracking-wide mb-3">Market trend</h2>
-        <div id="loc-trend" class="glass rounded-xl p-4"></div>
+        <h2 class="text-sm text-[var(--text-dim)] mb-3">Market trend</h2>
+        <div id="loc-trend" class="glass rounded-[3px] p-4"></div>
       </section>
 
       <section>
-        <h2 class="text-sm font-semibold text-[var(--text-dim)] uppercase tracking-wide mb-3">Investment metrics summary</h2>
-        <div id="loc-invest" class="glass rounded-xl p-4"></div>
+        <h2 class="text-sm text-[var(--text-dim)] mb-3">Investment metrics summary</h2>
+        <div id="loc-invest" class="glass rounded-[3px] p-4"></div>
       </section>
 
       <section>
-        <h2 class="text-sm font-semibold text-[var(--text-dim)] uppercase tracking-wide mb-3">Data sources</h2>
+        <h2 class="text-sm text-[var(--text-dim)] mb-3">Data sources</h2>
         <div id="loc-sources" class="text-xs text-[var(--text-dim)] space-y-1"></div>
       </section>
     </div>
 
     <div class="space-y-6">
-      <div id="loc-minimap" class="glass rounded-xl overflow-hidden" style="height:260px; position:relative;"></div>
+      <div id="loc-minimap" class="glass rounded-[3px] overflow-hidden" style="height:260px; position:relative;"></div>
 
-      <div class="glass rounded-xl p-4">
-        <h2 class="text-sm font-semibold text-[var(--text-dim)] uppercase tracking-wide mb-3">Nearby areas</h2>
+      <div class="glass rounded-[3px] p-4">
+        <h2 class="text-sm text-[var(--text-dim)] mb-3">Nearby areas</h2>
         <div id="loc-nearby" class="flex flex-wrap gap-2"></div>
       </div>
 
-      <a href="/compare" class="btn btn-primary w-full justify-center">Compare with other areas →</a>
+      <a href="/compare" class="btn btn-primary w-full justify-center">Compare with other areas</a>
     </div>
   </div>
 </div>
@@ -106,7 +106,7 @@
 
   function recordCard(r) {
     return `
-      <div class="glass rounded-lg p-4">
+      <div class="glass rounded-[3px] p-4">
         <div class="flex items-center justify-between mb-1">
           <span class="text-sm font-medium">${escapeHtml(r.property_type || "Property")}</span>
           <span class="badge ${confidenceBadgeClass(r.confidence)}">${escapeHtml(r.confidence || "—")}</span>
@@ -163,10 +163,10 @@
           <div><div class="text-xs text-[var(--text-dim)]">Est. gross yield</div><div class="text-lg font-semibold text-mono-num">${grossYield.toFixed(1)}%</div></div>
           <div><div class="text-xs text-[var(--text-dim)]">Avg sale price</div><div class="text-lg font-semibold text-mono-num">${formatRange(saleAvg.price_avg, saleAvg.price_avg)}</div></div>
         </div>
-        <a href="/investment" class="btn mt-4 inline-flex">Run full calculator →</a>
+        <a href="/investment" class="btn mt-4 inline-flex">Run full calculator</a>
       `;
     } else {
-      investEl.innerHTML = `<p class="empty-inline">Insufficient data to summarize investment metrics for this locality.</p><a href="/investment" class="btn mt-3 inline-flex">Open calculator →</a>`;
+      investEl.innerHTML = `<p class="empty-inline">Insufficient data to summarize investment metrics for this locality.</p><a href="/investment" class="btn mt-3 inline-flex">Open calculator</a>`;
     }
 
     // Data sources
@@ -196,7 +196,7 @@
           attributionControl: false,
         });
         miniMap.on("load", () => {
-          new maplibregl.Marker({ color: "#22d3ee" }).setLngLat([loc.longitude, loc.latitude]).addTo(miniMap);
+          new maplibregl.Marker({ color: "#c6a24d" }).setLngLat([loc.longitude, loc.latitude]).addTo(miniMap);
         });
       } else {
         document.getElementById("loc-minimap").innerHTML = `<div class="p-4 text-xs text-[var(--text-dim)]">Map position unavailable.</div>`;

@@ -15,17 +15,17 @@
 {% block nav %}
 <!-- Minimal overlaid nav for the map-hero page -->
 <header class="fixed top-0 left-0 right-0 z-30 pointer-events-none">
-  <div class="pointer-events-auto glass-raised border-b border-white/10 sm:border-b sm:rounded-none">
+  <div class="pointer-events-auto glass-raised">
     <div class="max-w-none px-3 sm:px-5 h-16 flex items-center gap-3">
       <a href="/" class="flex items-baseline gap-2 shrink-0 mr-1">
-        <span class="text-base sm:text-lg font-bold tracking-tight text-white">PropertyIQ</span>
-        <span class="hidden lg:inline text-xs text-[var(--text-dim)]">Karachi Real Estate Intelligence</span>
+        <span class="font-serif text-lg sm:text-xl font-medium text-[var(--text)]">PropertyIQ</span>
+        <span class="hidden lg:inline text-xs text-[var(--text-dim)]">Karachi real estate intelligence</span>
       </a>
 
       <div class="relative flex-1 max-w-md">
         <label for="global-search" class="sr-only">Search Karachi localities</label>
         <input id="global-search" type="search" placeholder="Search a locality, e.g. Clifton, DHA…" class="field" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="global-search-results" />
-        <ul id="global-search-results" role="listbox" hidden class="absolute mt-1 left-0 right-0 glass-raised rounded-lg overflow-hidden max-h-80 overflow-y-auto z-40"></ul>
+        <ul id="global-search-results" role="listbox" hidden class="absolute mt-1 left-0 right-0 glass border-[var(--line)] rounded-[3px] overflow-hidden max-h-80 overflow-y-auto z-40"></ul>
         <div id="global-search-live" class="sr-only" aria-live="polite"></div>
       </div>
 
@@ -58,10 +58,10 @@
   <div id="map" role="application" aria-label="Interactive map of Karachi localities"></div>
 
   <!-- Floating filter panel -->
-  <div id="filter-panel" hidden class="fixed top-20 right-4 z-30 w-[300px] glass-raised rounded-xl p-4 space-y-4 fade-in">
+  <div id="filter-panel" hidden class="fixed top-20 right-4 z-30 w-[300px] glass border-[var(--line)] rounded-[3px] p-4 space-y-4 fade-in">
     <div class="sheet-handle sm:hidden"></div>
     <div class="flex items-center justify-between">
-      <h2 class="text-sm font-semibold">Filters &amp; Layer</h2>
+      <h2 class="text-sm font-medium">Filters and data layer</h2>
       <button id="filter-close" class="icon-btn" aria-label="Close filters">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
       </button>
@@ -108,10 +108,10 @@
   </div>
 
   <!-- Location intelligence panel -->
-  <aside id="location-panel" class="glass-raised" aria-label="Location intelligence panel">
+  <aside id="location-panel" aria-label="Location intelligence panel">
     <div class="sheet-handle sm:hidden" aria-hidden="true"></div>
     <div class="flex items-center justify-between px-4 pt-3 sm:pt-4">
-      <span class="text-xs uppercase tracking-wide text-[var(--text-dim)]">Location Intelligence</span>
+      <span class="text-sm text-[var(--text-dim)]">Location intelligence</span>
       <button id="panel-close" class="icon-btn" aria-label="Close panel">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
       </button>

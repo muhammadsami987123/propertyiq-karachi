@@ -91,22 +91,22 @@ function renderContent(loc, market, marketError) {
       ${marketError ? `<p class="error-inline">Market data is currently unavailable for this locality.</p>` : renderMarketSections(market)}
 
       <div>
-        <h3 class="text-xs uppercase tracking-wide text-[var(--text-dim)] mb-2">Market trend</h3>
+        <h3 class="text-sm text-[var(--text-dim)] mb-2">Market trend</h3>
         <div id="panel-trend-chart"></div>
       </div>
 
       ${explanation ? `
       <div class="relative">
         <button id="confidence-explain-btn" class="badge ${confidenceBadgeClass('info')} cursor-pointer" aria-expanded="false">
-          Confidence details
+          Why this confidence level
         </button>
-        <div id="confidence-popover" hidden class="glass-raised rounded-lg p-3 mt-2 text-xs text-[var(--text-dim)] leading-relaxed">
+        <div id="confidence-popover" hidden class="glass rounded-[3px] p-3 mt-2 text-xs text-[var(--text-dim)] leading-relaxed">
           ${escapeHtml(explanation)}
         </div>
       </div>` : ""}
 
       <div class="flex flex-col gap-2 pt-2 border-t divider">
-        <a href="/karachi/${encodeURIComponent(slug)}" class="btn btn-primary justify-center">Explore Full Analysis →</a>
+        <a href="/karachi/${encodeURIComponent(slug)}" class="btn btn-primary justify-center">See the full analysis</a>
       </div>
     </div>
   `;
@@ -133,11 +133,11 @@ function renderMarketSections(market) {
   return `
     <div class="space-y-4">
       <div>
-        <h3 class="text-xs uppercase tracking-wide text-[var(--text-dim)] mb-2">Sale market</h3>
+        <h3 class="text-sm text-[var(--text-dim)] mb-2">Sale market</h3>
         ${saleRows ? `<div class="space-y-2">${saleRows}</div>` : `<p class="empty-inline">No sale data available.</p>`}
       </div>
       <div>
-        <h3 class="text-xs uppercase tracking-wide text-[var(--text-dim)] mb-2">Rental market</h3>
+        <h3 class="text-sm text-[var(--text-dim)] mb-2">Rental market</h3>
         ${rentRows ? `<div class="space-y-2">${rentRows}</div>` : `<p class="empty-inline">No rental data available.</p>`}
       </div>
     </div>
@@ -145,15 +145,16 @@ function renderMarketSections(market) {
 }
 
 function rowHtml(r) {
+  const dataType = r.data_type ? String(r.data_type).replace(/_/g, " ") : "";
   return `
-    <div class="glass rounded-lg p-3">
+    <div class="border border-[var(--line)] rounded-[3px] p-3">
       <div class="flex items-center justify-between">
-        <span class="text-sm font-medium">${escapeHtml(r.property_type || "Property")}</span>
+        <span class="text-sm font-medium capitalize">${escapeHtml(r.property_type || "Property")}</span>
         <span class="badge ${confidenceBadgeClass(r.confidence)}">${escapeHtml(r.confidence || "—")}</span>
       </div>
       <div class="text-sm text-mono-num mt-1">${formatRange(r.price_min, r.price_max)}</div>
       ${r.price_per_sqft_min ? `<div class="text-xs text-[var(--text-dim)] mt-0.5">${formatRange(r.price_per_sqft_min, r.price_per_sqft_max)} / sq ft</div>` : ""}
-      <div class="text-[11px] text-[var(--text-faint)] mt-1">${escapeHtml(r.source || "Source unspecified")}${r.data_type ? " · " + escapeHtml(r.data_type) : ""}</div>
+      <div class="text-[11px] text-[var(--text-faint)] mt-1">${escapeHtml(r.source || "Source unspecified")}${dataType ? ` (${escapeHtml(dataType)})` : ""}</div>
     </div>
   `;
 }

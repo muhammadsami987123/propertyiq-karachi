@@ -7,19 +7,24 @@
 <meta name="description" content="{% block description %}A visual intelligence layer for Karachi's real-estate market.{% endblock %}" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
     theme: {
       extend: {
         colors: {
-          bg: '#0a0e14',
-          panel: 'rgba(255,255,255,0.05)',
-          cyan: { DEFAULT: '#22d3ee' },
-          amber: { DEFAULT: '#f5a623' },
+          ink: '#0e1a24',
+          surface: '#152430',
+          brass: { DEFAULT: '#c6a24d' },
+          rise: '#5b9c74',
+          fall: '#b5563a',
         },
-        fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+        fontFamily: {
+          sans: ['IBM Plex Sans', 'system-ui', 'sans-serif'],
+          serif: ['Fraunces', 'Georgia', 'serif'],
+          mono: ['IBM Plex Mono', 'ui-monospace', 'monospace'],
+        },
       }
     }
   }
@@ -27,27 +32,27 @@
 <link rel="stylesheet" href="/static/css/style.css" />
 {% block head %}{% endblock %}
 </head>
-<body class="bg-[#0a0e14] text-[#e8eaed] font-sans min-h-dvh {% block bodyclass %}{% endblock %}">
+<body class="bg-[#0e1a24] text-[#ecebe3] font-sans min-h-dvh {% block bodyclass %}{% endblock %}">
 
 {% block nav %}
-<header class="sticky top-0 z-30 glass-raised border-b border-white/10">
+<header class="sticky top-0 z-30 glass-raised">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between" aria-label="Primary">
-    <a href="/" class="flex items-baseline gap-2 group">
-      <span class="text-lg font-bold tracking-tight text-white group-hover:text-cyan transition-colors duration-200">PropertyIQ</span>
-      <span class="hidden sm:inline text-xs text-[var(--text-dim)]">Karachi Real Estate Intelligence</span>
+    <a href="/" class="flex items-baseline gap-2.5 group">
+      <span class="font-serif text-xl font-medium text-[var(--text)] transition-colors duration-200">PropertyIQ</span>
+      <span class="hidden sm:inline text-xs text-[var(--text-dim)]">Karachi real estate intelligence</span>
     </a>
     <button id="mobile-nav-toggle" class="icon-btn sm:hidden" aria-label="Toggle navigation menu" aria-expanded="false">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
     </button>
-    <ul class="hidden sm:flex items-center gap-1 text-sm">
-      <li><a href="/explore" class="btn {% block nav_explore %}{% endblock %}">Explore</a></li>
-      <li><a href="/compare" class="btn {% block nav_compare %}{% endblock %}">Compare</a></li>
-      <li><a href="/investment" class="btn {% block nav_investment %}{% endblock %}">Investment</a></li>
-      <li><a href="/methodology" class="btn {% block nav_methodology %}{% endblock %}">Methodology</a></li>
-      <li><a href="/about" class="btn {% block nav_about %}{% endblock %}">About</a></li>
+    <ul class="hidden sm:flex items-center gap-6">
+      <li><a href="/explore" class="nav-link {% block nav_explore %}{% endblock %}">Explore</a></li>
+      <li><a href="/compare" class="nav-link {% block nav_compare %}{% endblock %}">Compare</a></li>
+      <li><a href="/investment" class="nav-link {% block nav_investment %}{% endblock %}">Investment</a></li>
+      <li><a href="/methodology" class="nav-link {% block nav_methodology %}{% endblock %}">Methodology</a></li>
+      <li><a href="/about" class="nav-link {% block nav_about %}{% endblock %}">About</a></li>
     </ul>
   </nav>
-  <ul id="mobile-nav-menu" hidden class="sm:hidden border-t border-white/10 px-4 py-3 space-y-1 text-sm">
+  <ul id="mobile-nav-menu" hidden class="sm:hidden border-t border-[var(--line)] px-4 py-3 space-y-1 text-sm">
     <li><a href="/explore" class="btn w-full justify-center">Explore</a></li>
     <li><a href="/compare" class="btn w-full justify-center">Compare</a></li>
     <li><a href="/investment" class="btn w-full justify-center">Investment</a></li>
@@ -74,12 +79,12 @@
 </main>
 
 {% block footer %}
-<footer class="border-t border-white/10 mt-16">
+<footer class="border-t border-[var(--line)] mt-16">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[var(--text-dim)]">
     <p>© {% block year %}2026{% endblock %} PropertyIQ — a visual intelligence layer for Karachi real estate.</p>
     <div class="flex items-center gap-4">
-      <a href="/methodology" class="hover:text-white transition-colors duration-200">Methodology</a>
-      <a href="/about" class="hover:text-white transition-colors duration-200">About</a>
+      <a href="/methodology" class="hover:text-[var(--text)] transition-colors duration-200">Methodology</a>
+      <a href="/about" class="hover:text-[var(--text)] transition-colors duration-200">About</a>
     </div>
   </div>
 </footer>

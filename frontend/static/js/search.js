@@ -64,7 +64,7 @@ export function initSearch({ input, resultsEl, liveRegionEl, onSelect, minChars 
       const li = document.createElement("li");
       li.setAttribute("role", "option");
       li.id = `search-opt-${i}`;
-      li.className = "px-3 py-2.5 cursor-pointer rounded-md flex items-center justify-between gap-3 hover:bg-white/5 min-h-[44px]";
+      li.className = "px-3 py-2.5 cursor-pointer flex items-center justify-between gap-3 hover:bg-[var(--surface)] min-h-[44px]";
       const left = document.createElement("div");
       left.innerHTML = "";
       const nameEl = document.createElement("div");
@@ -95,7 +95,7 @@ export function initSearch({ input, resultsEl, liveRegionEl, onSelect, minChars 
 
   function highlight() {
     Array.from(resultsEl.children).forEach((el, i) => {
-      el.classList.toggle("bg-white/10", i === activeIndex);
+      el.classList.toggle("bg-[var(--surface-2)]", i === activeIndex);
       if (i === activeIndex) input.setAttribute("aria-activedescendant", el.id);
     });
   }

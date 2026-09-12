@@ -1,10 +1,10 @@
 // charts.js — Chart.js helpers for trend + comparison charts.
 // Handles the "insufficient data" empty state per product honesty principle.
 
-const CYAN = "#22d3ee";
-const AMBER = "#f5a623";
-const GRID = "rgba(255,255,255,0.06)";
-const TEXT_DIM = "#8b93a1";
+const BRASS = "#c6a24d";
+const STEEL = "#6f8590";
+const GRID = "rgba(150,167,175,0.12)";
+const TEXT_DIM = "#96a7af";
 
 const chartRegistry = new Map();
 
@@ -47,9 +47,9 @@ export function renderTrendChart(container, trends) {
         {
           label: metricLabel,
           data: values,
-          borderColor: CYAN,
-          backgroundColor: "rgba(34,211,238,0.12)",
-          pointBackgroundColor: CYAN,
+          borderColor: BRASS,
+          backgroundColor: "rgba(198,162,77,0.12)",
+          pointBackgroundColor: BRASS,
           pointRadius: 3,
           tension: 0.3,
           fill: true,
@@ -62,11 +62,11 @@ export function renderTrendChart(container, trends) {
       plugins: {
         legend: { display: false },
         tooltip: {
-          backgroundColor: "#0d1420",
-          borderColor: "rgba(255,255,255,0.1)",
+          backgroundColor: "#101d28",
+          borderColor: "rgba(150,167,175,0.25)",
           borderWidth: 1,
-          titleColor: "#e8eaed",
-          bodyColor: "#e8eaed",
+          titleColor: "#ecebe3",
+          bodyColor: "#ecebe3",
         },
       },
       scales: {
@@ -93,8 +93,8 @@ export function renderComparisonBarChart(canvas, labels, values, label = "Price 
         {
           label,
           data: values,
-          backgroundColor: labels.map((_, i) => (i % 2 === 0 ? "rgba(34,211,238,0.75)" : "rgba(245,166,35,0.75)")),
-          borderRadius: 4,
+          backgroundColor: labels.map((_, i) => (i % 2 === 0 ? "rgba(198,162,77,0.8)" : "rgba(111,133,144,0.8)")),
+          borderRadius: 2,
           maxBarThickness: 48,
         },
       ],
@@ -105,11 +105,11 @@ export function renderComparisonBarChart(canvas, labels, values, label = "Price 
       plugins: {
         legend: { display: false },
         tooltip: {
-          backgroundColor: "#0d1420",
-          borderColor: "rgba(255,255,255,0.1)",
+          backgroundColor: "#101d28",
+          borderColor: "rgba(150,167,175,0.25)",
           borderWidth: 1,
-          titleColor: "#e8eaed",
-          bodyColor: "#e8eaed",
+          titleColor: "#ecebe3",
+          bodyColor: "#ecebe3",
         },
       },
       scales: {

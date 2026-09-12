@@ -92,7 +92,7 @@ export function initCalculatorPage({ form, resultsEl, errorEl, pkrStyleToggle, s
     resultsEl.innerHTML = `
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 fade-in">
         ${rows.map(([label, value]) => `
-          <div class="glass rounded-lg p-4">
+          <div class="glass rounded-[3px] p-4">
             <div class="text-xs text-[var(--text-dim)] mb-1">${label}</div>
             <div class="text-lg font-semibold text-mono-num">${escapeHtml(value)}</div>
           </div>
@@ -122,7 +122,7 @@ export function initCalculatorPage({ form, resultsEl, errorEl, pkrStyleToggle, s
       return;
     }
     savedListEl.innerHTML = list.map((item) => `
-      <div class="glass rounded-lg p-4 flex items-center justify-between gap-4" data-id="${item.id}">
+      <div class="glass rounded-[3px] p-4 flex items-center justify-between gap-4" data-id="${item.id}">
         <div>
           <div class="text-sm font-medium text-mono-num">${escapeHtml(formatPKR(item.payload.purchase_price, pkrStyle))}</div>
           <div class="text-xs text-[var(--text-dim)]">Net yield ${escapeHtml(formatPct(item.result.net_yield_pct))} · ${new Date(item.savedAt).toLocaleDateString()}</div>
