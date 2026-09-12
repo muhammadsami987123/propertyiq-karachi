@@ -1,0 +1,177 @@
+{% extends "_base.html" %}
+{% block title %}PropertyIQ — Karachi Real Estate Intelligence{% endblock %}
+{% block bodyclass %}overflow-hidden{% endblock %}
+
+{% block head %}
+<link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
+<script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  html, body { height: 100%; }
+  #map-page-root { position: fixed; inset: 0; }
+</style>
+{% endblock %}
+
+{% block nav %}
+<!-- Minimal overlaid nav for the map-hero page -->
+<header class="fixed top-0 left-0 right-0 z-30 pointer-events-none">
+  <div class="pointer-events-auto glass-raised border-b border-white/10 sm:border-b sm:rounded-none">
+    <div class="max-w-none px-3 sm:px-5 h-16 flex items-center gap-3">
+      <a href="/" class="flex items-baseline gap-2 shrink-0 mr-1">
+        <span class="text-base sm:text-lg font-bold tracking-tight text-white">PropertyIQ</span>
+        <span class="hidden lg:inline text-xs text-[var(--text-dim)]">Karachi Real Estate Intelligence</span>
+      </a>
+
+      <div class="relative flex-1 max-w-md">
+        <label for="global-search" class="sr-only">Search Karachi localities</label>
+        <input id="global-search" type="search" placeholder="Search a locality, e.g. Clifton, DHA…" class="field" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="global-search-results" />
+        <ul id="global-search-results" role="listbox" hidden class="absolute mt-1 left-0 right-0 glass-raised rounded-lg overflow-hidden max-h-80 overflow-y-auto z-40"></ul>
+        <div id="global-search-live" class="sr-only" aria-live="polite"></div>
+      </div>
+
+      <div class="hidden md:flex items-center gap-1 shrink-0" role="group" aria-label="View mode">
+        <button class="btn mode-btn btn-active" data-mode="sale">Sale</button>
+        <button class="btn mode-btn" data-mode="rent">Rent</button>
+        <button class="btn mode-btn" data-mode="market">Market</button>
+        <button class="btn mode-btn" data-mode="investment">Investment</button>
+      </div>
+
+      <button id="filter-toggle" class="icon-btn shrink-0" aria-label="Open filters" aria-expanded="false" aria-controls="filter-panel">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M8 12h8M11 18h2" stroke-linecap="round"/></svg>
+      </button>
+
+      <a href="/explore" class="hidden sm:inline-flex btn shrink-0" title="Text-based way to find any location">Explore list</a>
+    </div>
+    <div class="md:hidden flex gap-1 px-3 pb-2 overflow-x-auto" role="group" aria-label="View mode">
+      <button class="btn mode-btn btn-active shrink-0" data-mode="sale">Sale</button>
+      <button class="btn mode-btn shrink-0" data-mode="rent">Rent</button>
+      <button class="btn mode-btn shrink-0" data-mode="market">Market</button>
+      <button class="btn mode-btn shrink-0" data-mode="investment">Investment</button>
+    </div>
+  </div>
+</header>
+{% endblock %}
+
+{% block mainclass %}{% endblock %}
+{% block content %}
+<div id="map-page-root">
+  <div id="map" role="application" aria-label="Interactive map of Karachi localities"></div>
+
+  <!-- Floating filter panel -->
+  <div id="filter-panel" hidden class="fixed top-20 right-4 z-30 w-[300px] glass-raised rounded-xl p-4 space-y-4 fade-in">
+    <div class="sheet-handle sm:hidden"></div>
+    <div class="flex items-center justify-between">
+      <h2 class="text-sm font-semibold">Filters &amp; Layer</h2>
+      <button id="filter-close" class="icon-btn" aria-label="Close filters">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <div>
+      <label class="field-label" for="layer-select">Data layer</label>
+      <select id="layer-select" class="field">
+        <option value="price_per_sqft">Price per sq ft</option>
+        <option value="price">Sale price</option>
+        <option value="rent">Rental price</option>
+        <option value="growth">Market growth</option>
+        <option value="yield">Rental yield</option>
+        <option value="density">Density</option>
+        <option value="confidence">Confidence</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="field-label" for="property-type-select">Property type</label>
+      <select id="property-type-select" class="field">
+        <option value="">All types</option>
+        <option value="apartment">Apartment</option>
+        <option value="house">House</option>
+        <option value="plot">Plot</option>
+        <option value="commercial">Commercial</option>
+      </select>
+    </div>
+
+    <div class="grid grid-cols-2 gap-2">
+      <div>
+        <label class="field-label" for="price-min">Min price</label>
+        <input id="price-min" type="number" min="0" class="field" placeholder="0" />
+      </div>
+      <div>
+        <label class="field-label" for="price-max">Max price</label>
+        <input id="price-max" type="number" min="0" class="field" placeholder="Any" />
+      </div>
+    </div>
+
+    <div>
+      <div id="legend" class="pt-2 border-t divider"></div>
+    </div>
+  </div>
+
+  <!-- Location intelligence panel -->
+  <aside id="location-panel" class="glass-raised" aria-label="Location intelligence panel">
+    <div class="sheet-handle sm:hidden" aria-hidden="true"></div>
+    <div class="flex items-center justify-between px-4 pt-3 sm:pt-4">
+      <span class="text-xs uppercase tracking-wide text-[var(--text-dim)]">Location Intelligence</span>
+      <button id="panel-close" class="icon-btn" aria-label="Close panel">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div id="location-panel-body" class="flex-1 overflow-y-auto"></div>
+  </aside>
+</div>
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block scripts %}
+<script type="module">
+  import { initMap } from "/static/js/map.js";
+  import { initPanel, openPanelForLocation, closePanel } from "/static/js/panel.js";
+  import { initSearch } from "/static/js/search.js";
+  import { initFilters } from "/static/js/filters.js";
+
+  initPanel({
+    panel: document.getElementById("location-panel"),
+    body: document.getElementById("location-panel-body"),
+    close: document.getElementById("panel-close"),
+  });
+
+  const map = initMap({
+    container: "map",
+    onSelect: (locationId) => openPanelForLocation(locationId),
+  });
+
+  initSearch({
+    input: document.getElementById("global-search"),
+    resultsEl: document.getElementById("global-search-results"),
+    liveRegionEl: document.getElementById("global-search-live"),
+    onSelect: (result) => {
+      openPanelForLocation(result.id);
+    },
+  });
+
+  const filterToggle = document.getElementById("filter-toggle");
+  const filterPanel = document.getElementById("filter-panel");
+  document.getElementById("filter-close").addEventListener("click", () => filterPanel.setAttribute("hidden", ""));
+
+  initFilters({
+    layerSelect: document.getElementById("layer-select"),
+    propertyTypeSelect: document.getElementById("property-type-select"),
+    priceMinInput: document.getElementById("price-min"),
+    priceMaxInput: document.getElementById("price-max"),
+    legendEl: document.getElementById("legend"),
+    toggleBtn: filterToggle,
+    panelEl: filterPanel,
+  });
+
+  // Mode toggle (client-side state only)
+  const modeButtons = document.querySelectorAll(".mode-btn");
+  modeButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      modeButtons.forEach((b) => b.classList.remove("btn-active"));
+      btn.classList.add("btn-active");
+      window.dispatchEvent(new CustomEvent("propertyiq:mode-change", { detail: { mode: btn.dataset.mode } }));
+    });
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,731 @@
+[
+  {
+    "location_id": "clifton",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2022-Q3",
+    "value": 26520,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "clifton",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2023-Q1",
+    "value": 27322,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "clifton",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2023-Q3",
+    "value": 28149,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "clifton",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2024-Q1",
+    "value": 29001,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "clifton",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2024-Q3",
+    "value": 29879,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "clifton",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2025-Q1",
+    "value": 30783,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "clifton",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2025-Q2",
+    "value": 31715,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "dha-phase-5",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2022-Q1",
+    "value": 21060,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "dha-phase-5",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2022-Q3",
+    "value": 21652,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "dha-phase-5",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2023-Q1",
+    "value": 22261,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "dha-phase-5",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2023-Q3",
+    "value": 22888,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "dha-phase-5",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2024-Q1",
+    "value": 23532,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "dha-phase-5",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2024-Q3",
+    "value": 24194,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "dha-phase-5",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2025-Q1",
+    "value": 24874,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "dha-phase-5",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2025-Q2",
+    "value": 25574,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "dha-phase-6",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2023-Q1",
+    "value": 20280,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "dha-phase-6",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2023-Q3",
+    "value": 20698,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "dha-phase-6",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2024-Q1",
+    "value": 21125,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "dha-phase-6",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2024-Q3",
+    "value": 21562,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "dha-phase-6",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2025-Q1",
+    "value": 22007,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "dha-phase-6",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2025-Q2",
+    "value": 22461,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "dha-phase-8",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2022-Q1",
+    "value": 17160,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "dha-phase-8",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2022-Q3",
+    "value": 17483,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "dha-phase-8",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2023-Q1",
+    "value": 17812,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "dha-phase-8",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2023-Q3",
+    "value": 18148,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "dha-phase-8",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2024-Q1",
+    "value": 18490,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "dha-phase-8",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2024-Q3",
+    "value": 18839,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "dha-phase-8",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2025-Q1",
+    "value": 19194,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "dha-phase-8",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2025-Q2",
+    "value": 19555,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "gulshan-e-iqbal",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2023-Q1",
+    "value": 12090,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "gulshan-e-iqbal",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2023-Q3",
+    "value": 12363,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "gulshan-e-iqbal",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2024-Q1",
+    "value": 12643,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "gulshan-e-iqbal",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2024-Q3",
+    "value": 12929,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "gulshan-e-iqbal",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2025-Q1",
+    "value": 13221,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "gulshan-e-iqbal",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2025-Q2",
+    "value": 13521,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "gulistan-e-jauhar",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2022-Q1",
+    "value": 9750,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "gulistan-e-jauhar",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2022-Q3",
+    "value": 9995,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "gulistan-e-jauhar",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2023-Q1",
+    "value": 10247,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "gulistan-e-jauhar",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2023-Q3",
+    "value": 10506,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "gulistan-e-jauhar",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2024-Q1",
+    "value": 10770,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "gulistan-e-jauhar",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2024-Q3",
+    "value": 11042,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "gulistan-e-jauhar",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2025-Q1",
+    "value": 11320,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "gulistan-e-jauhar",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2025-Q2",
+    "value": 11606,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "north-nazimabad",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2022-Q1",
+    "value": 13650,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "north-nazimabad",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2022-Q3",
+    "value": 13998,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "north-nazimabad",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2023-Q1",
+    "value": 14355,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "north-nazimabad",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2023-Q3",
+    "value": 14721,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "north-nazimabad",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2024-Q1",
+    "value": 15097,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "north-nazimabad",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2024-Q3",
+    "value": 15482,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "north-nazimabad",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2025-Q1",
+    "value": 15877,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "north-nazimabad",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2025-Q2",
+    "value": 16282,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "bahadurabad",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2022-Q3",
+    "value": 14820,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "bahadurabad",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2023-Q1",
+    "value": 15141,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "bahadurabad",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2023-Q3",
+    "value": 15469,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "bahadurabad",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2024-Q1",
+    "value": 15804,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "bahadurabad",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2024-Q3",
+    "value": 16146,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "bahadurabad",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2025-Q1",
+    "value": 16496,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "bahadurabad",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2025-Q2",
+    "value": 16853,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "pechs",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2022-Q1",
+    "value": 15990,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "pechs",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2022-Q3",
+    "value": 16308,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "pechs",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2023-Q1",
+    "value": 16633,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "pechs",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2023-Q3",
+    "value": 16965,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "pechs",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2024-Q1",
+    "value": 17303,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "pechs",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2024-Q3",
+    "value": 17648,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "pechs",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2025-Q1",
+    "value": 18000,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "pechs",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2025-Q2",
+    "value": 18359,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "gulberg",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2022-Q3",
+    "value": 10530,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "gulberg",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2023-Q1",
+    "value": 10739,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "gulberg",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2023-Q3",
+    "value": 10952,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "gulberg",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2024-Q1",
+    "value": 11170,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "gulberg",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2024-Q3",
+    "value": 11392,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "gulberg",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2025-Q1",
+    "value": 11619,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "gulberg",
+    "property_type": "apartment",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2025-Q2",
+    "value": 11850,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "nazimabad",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2022-Q1",
+    "value": 9984,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "nazimabad",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2022-Q3",
+    "value": 10278,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "nazimabad",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2023-Q1",
+    "value": 10582,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "nazimabad",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2023-Q3",
+    "value": 10894,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "nazimabad",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2024-Q1",
+    "value": 11216,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "nazimabad",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2024-Q3",
+    "value": 11548,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "nazimabad",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2025-Q1",
+    "value": 11889,
+    "data_type": "research_estimate"
+  },
+  {
+    "location_id": "nazimabad",
+    "property_type": "house",
+    "transaction_type": "sale",
+    "metric": "price_per_sqft",
+    "period": "2025-Q2",
+    "value": 12240,
+    "data_type": "research_estimate"
+  }
+]

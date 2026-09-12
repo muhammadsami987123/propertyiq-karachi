@@ -1,0 +1,1849 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "clifton",
+        "name": "Clifton",
+        "market_category": "premium",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.0239,
+              24.8078
+            ],
+            [
+              67.0359,
+              24.8078
+            ],
+            [
+              67.0359,
+              24.8198
+            ],
+            [
+              67.0239,
+              24.8198
+            ],
+            [
+              67.0239,
+              24.8078
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "dha-phase-1",
+        "name": "DHA Phase 1",
+        "market_category": "premium",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.035,
+              24.802
+            ],
+            [
+              67.047,
+              24.802
+            ],
+            [
+              67.047,
+              24.814
+            ],
+            [
+              67.035,
+              24.814
+            ],
+            [
+              67.035,
+              24.802
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "dha-phase-2",
+        "name": "DHA Phase 2",
+        "market_category": "premium",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.041,
+              24.794999999999998
+            ],
+            [
+              67.053,
+              24.794999999999998
+            ],
+            [
+              67.053,
+              24.807
+            ],
+            [
+              67.041,
+              24.807
+            ],
+            [
+              67.041,
+              24.794999999999998
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "dha-phase-4",
+        "name": "DHA Phase 4",
+        "market_category": "premium",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.056,
+              24.807
+            ],
+            [
+              67.068,
+              24.807
+            ],
+            [
+              67.068,
+              24.819
+            ],
+            [
+              67.056,
+              24.819
+            ],
+            [
+              67.056,
+              24.807
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "dha-phase-5",
+        "name": "DHA Phase 5",
+        "market_category": "premium",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.062,
+              24.803
+            ],
+            [
+              67.074,
+              24.803
+            ],
+            [
+              67.074,
+              24.815
+            ],
+            [
+              67.062,
+              24.815
+            ],
+            [
+              67.062,
+              24.803
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "dha-phase-6",
+        "name": "DHA Phase 6",
+        "market_category": "premium",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.068,
+              24.799
+            ],
+            [
+              67.08,
+              24.799
+            ],
+            [
+              67.08,
+              24.811
+            ],
+            [
+              67.068,
+              24.811
+            ],
+            [
+              67.068,
+              24.799
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "dha-phase-7",
+        "name": "DHA Phase 7",
+        "market_category": "premium",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.074,
+              24.812
+            ],
+            [
+              67.086,
+              24.812
+            ],
+            [
+              67.086,
+              24.824
+            ],
+            [
+              67.074,
+              24.824
+            ],
+            [
+              67.074,
+              24.812
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "dha-phase-8",
+        "name": "DHA Phase 8",
+        "market_category": "premium",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.094,
+              24.819
+            ],
+            [
+              67.106,
+              24.819
+            ],
+            [
+              67.106,
+              24.831
+            ],
+            [
+              67.094,
+              24.831
+            ],
+            [
+              67.094,
+              24.819
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "gulshan-e-iqbal",
+        "name": "Gulshan-e-Iqbal",
+        "market_category": "upper-mid",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.091,
+              24.913
+            ],
+            [
+              67.105,
+              24.913
+            ],
+            [
+              67.105,
+              24.927000000000003
+            ],
+            [
+              67.091,
+              24.927000000000003
+            ],
+            [
+              67.091,
+              24.913
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "gulistan-e-jauhar",
+        "name": "Gulistan-e-Jauhar",
+        "market_category": "mid-market",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.125,
+              24.91
+            ],
+            [
+              67.14099999999999,
+              24.91
+            ],
+            [
+              67.14099999999999,
+              24.926
+            ],
+            [
+              67.125,
+              24.926
+            ],
+            [
+              67.125,
+              24.91
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "north-nazimabad",
+        "name": "North Nazimabad",
+        "market_category": "upper-mid",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.03999999999999,
+              24.93
+            ],
+            [
+              67.054,
+              24.93
+            ],
+            [
+              67.054,
+              24.944000000000003
+            ],
+            [
+              67.03999999999999,
+              24.944000000000003
+            ],
+            [
+              67.03999999999999,
+              24.93
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "nazimabad",
+        "name": "Nazimabad",
+        "market_category": "mid-market",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.025,
+              24.898
+            ],
+            [
+              67.041,
+              24.898
+            ],
+            [
+              67.041,
+              24.913999999999998
+            ],
+            [
+              67.025,
+              24.913999999999998
+            ],
+            [
+              67.025,
+              24.898
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "federal-b-area",
+        "name": "Federal B Area",
+        "market_category": "mid-market",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.045,
+              24.919
+            ],
+            [
+              67.06099999999999,
+              24.919
+            ],
+            [
+              67.06099999999999,
+              24.935
+            ],
+            [
+              67.045,
+              24.935
+            ],
+            [
+              67.045,
+              24.919
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "pechs",
+        "name": "PECHS",
+        "market_category": "upper-mid",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.05,
+              24.865
+            ],
+            [
+              67.06400000000001,
+              24.865
+            ],
+            [
+              67.06400000000001,
+              24.879
+            ],
+            [
+              67.05,
+              24.879
+            ],
+            [
+              67.05,
+              24.865
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "bahadurabad",
+        "name": "Bahadurabad",
+        "market_category": "upper-mid",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.05499999999999,
+              24.872
+            ],
+            [
+              67.069,
+              24.872
+            ],
+            [
+              67.069,
+              24.886000000000003
+            ],
+            [
+              67.05499999999999,
+              24.886000000000003
+            ],
+            [
+              67.05499999999999,
+              24.872
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "korangi",
+        "name": "Korangi",
+        "market_category": "affordable",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.116,
+              24.823999999999998
+            ],
+            [
+              67.134,
+              24.823999999999998
+            ],
+            [
+              67.134,
+              24.842
+            ],
+            [
+              67.116,
+              24.842
+            ],
+            [
+              67.116,
+              24.823999999999998
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "landhi",
+        "name": "Landhi",
+        "market_category": "affordable",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.181,
+              24.835
+            ],
+            [
+              67.199,
+              24.835
+            ],
+            [
+              67.199,
+              24.853
+            ],
+            [
+              67.181,
+              24.853
+            ],
+            [
+              67.181,
+              24.835
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "malir",
+        "name": "Malir",
+        "market_category": "affordable",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.196,
+              24.886
+            ],
+            [
+              67.214,
+              24.886
+            ],
+            [
+              67.214,
+              24.904
+            ],
+            [
+              67.196,
+              24.904
+            ],
+            [
+              67.196,
+              24.886
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "model-colony",
+        "name": "Model Colony",
+        "market_category": "mid-market",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.187,
+              24.877000000000002
+            ],
+            [
+              67.20299999999999,
+              24.877000000000002
+            ],
+            [
+              67.20299999999999,
+              24.893
+            ],
+            [
+              67.187,
+              24.893
+            ],
+            [
+              67.187,
+              24.877000000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "shah-faisal-colony",
+        "name": "Shah Faisal Colony",
+        "market_category": "affordable",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.174,
+              24.863
+            ],
+            [
+              67.19200000000001,
+              24.863
+            ],
+            [
+              67.19200000000001,
+              24.881
+            ],
+            [
+              67.174,
+              24.881
+            ],
+            [
+              67.174,
+              24.863
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "orangi-town",
+        "name": "Orangi Town",
+        "market_category": "affordable",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              66.961,
+              24.936
+            ],
+            [
+              66.979,
+              24.936
+            ],
+            [
+              66.979,
+              24.954
+            ],
+            [
+              66.961,
+              24.954
+            ],
+            [
+              66.961,
+              24.936
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "baldia-town",
+        "name": "Baldia Town",
+        "market_category": "affordable",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              66.941,
+              24.916
+            ],
+            [
+              66.959,
+              24.916
+            ],
+            [
+              66.959,
+              24.934
+            ],
+            [
+              66.941,
+              24.934
+            ],
+            [
+              66.941,
+              24.916
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "lyari",
+        "name": "Lyari",
+        "market_category": "affordable",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              66.986,
+              24.876
+            ],
+            [
+              67.004,
+              24.876
+            ],
+            [
+              67.004,
+              24.894000000000002
+            ],
+            [
+              66.986,
+              24.894000000000002
+            ],
+            [
+              66.986,
+              24.876
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "saddar",
+        "name": "Saddar",
+        "market_category": "commercial",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.00999999999999,
+              24.849
+            ],
+            [
+              67.024,
+              24.849
+            ],
+            [
+              67.024,
+              24.863000000000003
+            ],
+            [
+              67.00999999999999,
+              24.863000000000003
+            ],
+            [
+              67.00999999999999,
+              24.849
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "garden",
+        "name": "Garden",
+        "market_category": "mid-market",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.015,
+              24.866
+            ],
+            [
+              67.03099999999999,
+              24.866
+            ],
+            [
+              67.03099999999999,
+              24.881999999999998
+            ],
+            [
+              67.015,
+              24.881999999999998
+            ],
+            [
+              67.015,
+              24.866
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "gulberg",
+        "name": "Gulberg",
+        "market_category": "mid-market",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.065,
+              24.925
+            ],
+            [
+              67.08099999999999,
+              24.925
+            ],
+            [
+              67.08099999999999,
+              24.941
+            ],
+            [
+              67.065,
+              24.941
+            ],
+            [
+              67.065,
+              24.925
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "buffer-zone",
+        "name": "Buffer Zone",
+        "market_category": "mid-market",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.052,
+              24.947
+            ],
+            [
+              67.068,
+              24.947
+            ],
+            [
+              67.068,
+              24.962999999999997
+            ],
+            [
+              67.052,
+              24.962999999999997
+            ],
+            [
+              67.052,
+              24.947
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "north-karachi",
+        "name": "North Karachi",
+        "market_category": "affordable",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.036,
+              24.961
+            ],
+            [
+              67.054,
+              24.961
+            ],
+            [
+              67.054,
+              24.979
+            ],
+            [
+              67.036,
+              24.979
+            ],
+            [
+              67.036,
+              24.961
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "surjani-town",
+        "name": "Surjani Town",
+        "market_category": "affordable",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.031,
+              25.001
+            ],
+            [
+              67.049,
+              25.001
+            ],
+            [
+              67.049,
+              25.019000000000002
+            ],
+            [
+              67.031,
+              25.019000000000002
+            ],
+            [
+              67.031,
+              25.001
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "new-karachi",
+        "name": "New Karachi",
+        "market_category": "affordable",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.056,
+              24.971
+            ],
+            [
+              67.074,
+              24.971
+            ],
+            [
+              67.074,
+              24.989
+            ],
+            [
+              67.056,
+              24.989
+            ],
+            [
+              67.056,
+              24.971
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "scheme-33",
+        "name": "Scheme 33",
+        "market_category": "emerging",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.1,
+              24.99
+            ],
+            [
+              67.12,
+              24.99
+            ],
+            [
+              67.12,
+              25.01
+            ],
+            [
+              67.1,
+              25.01
+            ],
+            [
+              67.1,
+              24.99
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "gulzar-e-hijri",
+        "name": "Gulzar-e-Hijri",
+        "market_category": "emerging",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.11,
+              24.985
+            ],
+            [
+              67.13000000000001,
+              24.985
+            ],
+            [
+              67.13000000000001,
+              25.005000000000003
+            ],
+            [
+              67.11,
+              25.005000000000003
+            ],
+            [
+              67.11,
+              24.985
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "saadi-town",
+        "name": "Saadi Town",
+        "market_category": "emerging",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.13499999999999,
+              24.95
+            ],
+            [
+              67.155,
+              24.95
+            ],
+            [
+              67.155,
+              24.970000000000002
+            ],
+            [
+              67.13499999999999,
+              24.970000000000002
+            ],
+            [
+              67.13499999999999,
+              24.95
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "bahria-town-karachi",
+        "name": "Bahria Town Karachi",
+        "market_category": "emerging",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.14999999999999,
+              25.075
+            ],
+            [
+              67.17,
+              25.075
+            ],
+            [
+              67.17,
+              25.095000000000002
+            ],
+            [
+              67.14999999999999,
+              25.095000000000002
+            ],
+            [
+              67.14999999999999,
+              25.075
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "gadap-town",
+        "name": "Gadap Town",
+        "market_category": "emerging",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.19,
+              25.09
+            ],
+            [
+              67.21000000000001,
+              25.09
+            ],
+            [
+              67.21000000000001,
+              25.110000000000003
+            ],
+            [
+              67.19,
+              25.110000000000003
+            ],
+            [
+              67.19,
+              25.09
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "bin-qasim",
+        "name": "Bin Qasim",
+        "market_category": "commercial",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.31299999999999,
+              24.762999999999998
+            ],
+            [
+              67.327,
+              24.762999999999998
+            ],
+            [
+              67.327,
+              24.777
+            ],
+            [
+              67.31299999999999,
+              24.777
+            ],
+            [
+              67.31299999999999,
+              24.762999999999998
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "keamari",
+        "name": "Keamari",
+        "market_category": "commercial",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              66.973,
+              24.825999999999997
+            ],
+            [
+              66.98700000000001,
+              24.825999999999997
+            ],
+            [
+              66.98700000000001,
+              24.84
+            ],
+            [
+              66.973,
+              24.84
+            ],
+            [
+              66.973,
+              24.825999999999997
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "site-area",
+        "name": "SITE Area",
+        "market_category": "commercial",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              66.98299999999999,
+              24.883
+            ],
+            [
+              66.997,
+              24.883
+            ],
+            [
+              66.997,
+              24.897000000000002
+            ],
+            [
+              66.98299999999999,
+              24.897000000000002
+            ],
+            [
+              66.98299999999999,
+              24.883
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "askari",
+        "name": "Askari (Malir Cantonment)",
+        "market_category": "premium",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.154,
+              24.864
+            ],
+            [
+              67.166,
+              24.864
+            ],
+            [
+              67.166,
+              24.876
+            ],
+            [
+              67.154,
+              24.876
+            ],
+            [
+              67.154,
+              24.864
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "tariq-road",
+        "name": "Tariq Road",
+        "market_category": "commercial",
+        "has_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          67.05,
+          24.876
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "zamzama",
+        "name": "Zamzama",
+        "market_category": "premium",
+        "has_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          67.033,
+          24.823
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "defence-view",
+        "name": "Defence View",
+        "market_category": "premium",
+        "has_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          67.035,
+          24.795
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "airport-area",
+        "name": "Airport Area (Drigh Road)",
+        "market_category": "mixed",
+        "has_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          67.16,
+          24.9
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "university-road",
+        "name": "University Road",
+        "market_category": "mid-market",
+        "has_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          67.115,
+          24.935
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "shahrah-e-faisal",
+        "name": "Shahrah-e-Faisal Corridor",
+        "market_category": "commercial",
+        "has_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          67.07,
+          24.86
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "gulshan-e-hadeed",
+        "name": "Gulshan-e-Hadeed",
+        "market_category": "emerging",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.28999999999999,
+              24.744999999999997
+            ],
+            [
+              67.31,
+              24.744999999999997
+            ],
+            [
+              67.31,
+              24.765
+            ],
+            [
+              67.28999999999999,
+              24.765
+            ],
+            [
+              67.28999999999999,
+              24.744999999999997
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "kda-scheme-1",
+        "name": "KDA Scheme 1",
+        "market_category": "upper-mid",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.07799999999999,
+              24.903
+            ],
+            [
+              67.092,
+              24.903
+            ],
+            [
+              67.092,
+              24.917
+            ],
+            [
+              67.07799999999999,
+              24.917
+            ],
+            [
+              67.07799999999999,
+              24.903
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "kda-scheme-24",
+        "name": "KDA Scheme 24",
+        "market_category": "mid-market",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.09700000000001,
+              24.917
+            ],
+            [
+              67.113,
+              24.917
+            ],
+            [
+              67.113,
+              24.933
+            ],
+            [
+              67.09700000000001,
+              24.933
+            ],
+            [
+              67.09700000000001,
+              24.917
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "gulshan-e-maymar",
+        "name": "Gulshan-e-Maymar",
+        "market_category": "emerging",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              67.11999999999999,
+              25.009999999999998
+            ],
+            [
+              67.14,
+              25.009999999999998
+            ],
+            [
+              67.14,
+              25.03
+            ],
+            [
+              67.11999999999999,
+              25.03
+            ],
+            [
+              67.11999999999999,
+              25.009999999999998
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "ittehad-town",
+        "name": "Ittehad Town",
+        "market_category": "affordable",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              66.951,
+              24.926
+            ],
+            [
+              66.969,
+              24.926
+            ],
+            [
+              66.969,
+              24.944
+            ],
+            [
+              66.951,
+              24.944
+            ],
+            [
+              66.951,
+              24.926
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "manghopir",
+        "name": "Manghopir",
+        "market_category": "affordable",
+        "has_boundary": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              66.981,
+              24.945999999999998
+            ],
+            [
+              66.999,
+              24.945999999999998
+            ],
+            [
+              66.999,
+              24.964
+            ],
+            [
+              66.981,
+              24.964
+            ],
+            [
+              66.981,
+              24.945999999999998
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "clifton-block-2",
+        "name": "Clifton Block 2",
+        "market_category": "premium",
+        "has_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          67.033,
+          24.818
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "clifton-block-5",
+        "name": "Clifton Block 5",
+        "market_category": "premium",
+        "has_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          67.027,
+          24.81
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "boat-basin",
+        "name": "Boat Basin",
+        "market_category": "premium",
+        "has_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          67.035,
+          24.817
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "gulshan-e-hadid-town",
+        "name": "Steel Town",
+        "market_category": "commercial",
+        "has_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          67.31,
+          24.765
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "jamshed-quarters",
+        "name": "Jamshed Quarters",
+        "market_category": "mid-market",
+        "has_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          67.04,
+          24.868
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "soldier-bazaar",
+        "name": "Soldier Bazaar",
+        "market_category": "mid-market",
+        "has_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          67.023,
+          24.862
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "kharadar",
+        "name": "Kharadar",
+        "market_category": "affordable",
+        "has_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          66.992,
+          24.848
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location_id": "mehmoodabad",
+        "name": "Mehmoodabad",
+        "market_category": "mid-market",
+        "has_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          67.048,
+          24.856
+        ]
+      }
+    }
+  ]
+}

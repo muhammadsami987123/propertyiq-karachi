@@ -1,0 +1,1064 @@
+[
+  {
+    "id": "clifton",
+    "slug": "clifton",
+    "name": "Clifton",
+    "city": "Karachi",
+    "town": "Clifton Town",
+    "latitude": 24.8138,
+    "longitude": 67.0299,
+    "market_category": "premium",
+    "description": "One of Karachi's oldest upscale coastal neighborhoods, known for beachfront residences, embassies, and high-end retail.",
+    "nearby_ids": [
+      "clifton-block-5",
+      "clifton-block-2",
+      "boat-basin",
+      "zamzama",
+      "dha-phase-1"
+    ]
+  },
+  {
+    "id": "dha-phase-1",
+    "slug": "dha-phase-1",
+    "name": "DHA Phase 1",
+    "city": "Karachi",
+    "town": "Defence (DHA)",
+    "latitude": 24.808,
+    "longitude": 67.041,
+    "market_category": "premium",
+    "description": "An early, well-established phase of Defence Housing Authority with mature tree-lined streets and large bungalows.",
+    "nearby_ids": [
+      "dha-phase-2",
+      "boat-basin",
+      "clifton",
+      "clifton-block-2",
+      "clifton-block-5"
+    ]
+  },
+  {
+    "id": "dha-phase-2",
+    "slug": "dha-phase-2",
+    "name": "DHA Phase 2",
+    "city": "Karachi",
+    "town": "Defence (DHA)",
+    "latitude": 24.801,
+    "longitude": 67.047,
+    "market_category": "premium",
+    "description": "Established residential phase of DHA close to Clifton, favored for its central location.",
+    "nearby_ids": [
+      "dha-phase-1",
+      "defence-view",
+      "dha-phase-4",
+      "boat-basin",
+      "clifton"
+    ]
+  },
+  {
+    "id": "dha-phase-4",
+    "slug": "dha-phase-4",
+    "name": "DHA Phase 4",
+    "city": "Karachi",
+    "town": "Defence (DHA)",
+    "latitude": 24.813,
+    "longitude": 67.062,
+    "market_category": "premium",
+    "description": "A commercially active DHA phase with mixed residential and office/retail development.",
+    "nearby_ids": [
+      "dha-phase-5",
+      "dha-phase-6",
+      "dha-phase-7",
+      "dha-phase-2",
+      "dha-phase-1"
+    ]
+  },
+  {
+    "id": "dha-phase-5",
+    "slug": "dha-phase-5",
+    "name": "DHA Phase 5",
+    "city": "Karachi",
+    "town": "Defence (DHA)",
+    "latitude": 24.809,
+    "longitude": 67.068,
+    "market_category": "premium",
+    "description": "A sought-after DHA phase near Khayaban-e-Ittehad, popular for high-rise apartments and bungalows.",
+    "nearby_ids": [
+      "dha-phase-4",
+      "dha-phase-6",
+      "dha-phase-7",
+      "dha-phase-2",
+      "dha-phase-1"
+    ]
+  },
+  {
+    "id": "dha-phase-6",
+    "slug": "dha-phase-6",
+    "name": "DHA Phase 6",
+    "city": "Karachi",
+    "town": "Defence (DHA)",
+    "latitude": 24.805,
+    "longitude": 67.074,
+    "market_category": "premium",
+    "description": "Centrally located DHA phase with strong commercial corridors and premium housing.",
+    "nearby_ids": [
+      "dha-phase-5",
+      "dha-phase-7",
+      "dha-phase-4",
+      "dha-phase-2",
+      "dha-phase-8"
+    ]
+  },
+  {
+    "id": "dha-phase-7",
+    "slug": "dha-phase-7",
+    "name": "DHA Phase 7",
+    "city": "Karachi",
+    "town": "Defence (DHA)",
+    "latitude": 24.818,
+    "longitude": 67.08,
+    "market_category": "premium",
+    "description": "A DHA phase bordering Korangi, mixing residential plots with newer development.",
+    "nearby_ids": [
+      "dha-phase-6",
+      "dha-phase-5",
+      "dha-phase-4",
+      "dha-phase-8",
+      "dha-phase-2"
+    ]
+  },
+  {
+    "id": "dha-phase-8",
+    "slug": "dha-phase-8",
+    "name": "DHA Phase 8",
+    "city": "Karachi",
+    "town": "Defence (DHA)",
+    "latitude": 24.825,
+    "longitude": 67.1,
+    "market_category": "premium",
+    "description": "One of the newer, more spacious DHA phases (Zulfiqarabad) near the airport corridor and golf course.",
+    "nearby_ids": [
+      "dha-phase-7",
+      "korangi",
+      "dha-phase-6",
+      "dha-phase-5",
+      "dha-phase-4"
+    ]
+  },
+  {
+    "id": "gulshan-e-iqbal",
+    "slug": "gulshan-e-iqbal",
+    "name": "Gulshan-e-Iqbal",
+    "city": "Karachi",
+    "town": "Gulshan Town",
+    "latitude": 24.92,
+    "longitude": 67.098,
+    "market_category": "upper-mid",
+    "description": "A large, densely populated middle-to-upper-middle-class residential area with universities and commercial markets.",
+    "nearby_ids": [
+      "kda-scheme-24",
+      "kda-scheme-1",
+      "university-road",
+      "gulberg",
+      "gulistan-e-jauhar"
+    ]
+  },
+  {
+    "id": "gulistan-e-jauhar",
+    "slug": "gulistan-e-jauhar",
+    "name": "Gulistan-e-Jauhar",
+    "city": "Karachi",
+    "town": "Jamshed/Gulshan Town",
+    "latitude": 24.918,
+    "longitude": 67.133,
+    "market_category": "mid-market",
+    "description": "A sprawling residential locality known for mid-rise apartment blocks and rapid vertical development.",
+    "nearby_ids": [
+      "university-road",
+      "kda-scheme-24",
+      "airport-area",
+      "gulshan-e-iqbal",
+      "saadi-town"
+    ]
+  },
+  {
+    "id": "north-nazimabad",
+    "slug": "north-nazimabad",
+    "name": "North Nazimabad",
+    "city": "Karachi",
+    "town": "North Nazimabad Town",
+    "latitude": 24.937,
+    "longitude": 67.047,
+    "market_category": "upper-mid",
+    "description": "A well-planned, older residential town with wide roads, parks, and a mix of houses and apartments.",
+    "nearby_ids": [
+      "federal-b-area",
+      "buffer-zone",
+      "gulberg",
+      "north-karachi",
+      "nazimabad"
+    ]
+  },
+  {
+    "id": "nazimabad",
+    "slug": "nazimabad",
+    "name": "Nazimabad",
+    "city": "Karachi",
+    "town": "North Nazimabad Town",
+    "latitude": 24.906,
+    "longitude": 67.033,
+    "market_category": "mid-market",
+    "description": "One of Karachi's oldest planned residential colonies, largely bungalows and mid-rise apartments.",
+    "nearby_ids": [
+      "federal-b-area",
+      "garden",
+      "north-nazimabad",
+      "tariq-road",
+      "jamshed-quarters"
+    ]
+  },
+  {
+    "id": "federal-b-area",
+    "slug": "federal-b-area",
+    "name": "Federal B Area",
+    "city": "Karachi",
+    "town": "Gulberg Town",
+    "latitude": 24.927,
+    "longitude": 67.053,
+    "market_category": "mid-market",
+    "description": "A busy, densely built residential and commercial locality also known as Azizabad.",
+    "nearby_ids": [
+      "north-nazimabad",
+      "gulberg",
+      "buffer-zone",
+      "nazimabad",
+      "kda-scheme-1"
+    ]
+  },
+  {
+    "id": "pechs",
+    "slug": "pechs",
+    "name": "PECHS",
+    "city": "Karachi",
+    "town": "Jamshed Town",
+    "latitude": 24.872,
+    "longitude": 67.057,
+    "market_category": "upper-mid",
+    "description": "Pakistan Employees Cooperative Housing Society — a leafy, established middle-to-upper-class society near Tariq Road.",
+    "nearby_ids": [
+      "tariq-road",
+      "bahadurabad",
+      "jamshed-quarters",
+      "shahrah-e-faisal",
+      "mehmoodabad"
+    ]
+  },
+  {
+    "id": "bahadurabad",
+    "slug": "bahadurabad",
+    "name": "Bahadurabad",
+    "city": "Karachi",
+    "town": "Jamshed Town",
+    "latitude": 24.879,
+    "longitude": 67.062,
+    "market_category": "upper-mid",
+    "description": "A busy residential-commercial hub known for its market, eateries, and central location.",
+    "nearby_ids": [
+      "pechs",
+      "tariq-road",
+      "shahrah-e-faisal",
+      "jamshed-quarters",
+      "mehmoodabad"
+    ]
+  },
+  {
+    "id": "korangi",
+    "slug": "korangi",
+    "name": "Korangi",
+    "city": "Karachi",
+    "town": "Korangi Town",
+    "latitude": 24.833,
+    "longitude": 67.125,
+    "market_category": "affordable",
+    "description": "A large industrial and working-class residential zone in the southeast of the city.",
+    "nearby_ids": [
+      "dha-phase-8",
+      "dha-phase-7",
+      "askari",
+      "dha-phase-6",
+      "shahrah-e-faisal"
+    ]
+  },
+  {
+    "id": "landhi",
+    "slug": "landhi",
+    "name": "Landhi",
+    "city": "Karachi",
+    "town": "Landhi Town",
+    "latitude": 24.844,
+    "longitude": 67.19,
+    "market_category": "affordable",
+    "description": "An industrial belt area with dense, low-cost housing adjacent to numerous factories.",
+    "nearby_ids": [
+      "shah-faisal-colony",
+      "askari",
+      "model-colony",
+      "malir",
+      "airport-area"
+    ]
+  },
+  {
+    "id": "malir",
+    "slug": "malir",
+    "name": "Malir",
+    "city": "Karachi",
+    "town": "Malir Town",
+    "latitude": 24.895,
+    "longitude": 67.205,
+    "market_category": "affordable",
+    "description": "A semi-rural to suburban area on the eastern edge of Karachi with lower-density housing and cantonment influence.",
+    "nearby_ids": [
+      "model-colony",
+      "shah-faisal-colony",
+      "airport-area",
+      "askari",
+      "landhi"
+    ]
+  },
+  {
+    "id": "model-colony",
+    "slug": "model-colony",
+    "name": "Model Colony",
+    "city": "Karachi",
+    "town": "Malir Town",
+    "latitude": 24.885,
+    "longitude": 67.195,
+    "market_category": "mid-market",
+    "description": "A residential area near the airport, popular with mid-income families and government housing schemes.",
+    "nearby_ids": [
+      "malir",
+      "shah-faisal-colony",
+      "airport-area",
+      "askari",
+      "landhi"
+    ]
+  },
+  {
+    "id": "shah-faisal-colony",
+    "slug": "shah-faisal-colony",
+    "name": "Shah Faisal Colony",
+    "city": "Karachi",
+    "town": "Shah Faisal Town",
+    "latitude": 24.872,
+    "longitude": 67.183,
+    "market_category": "affordable",
+    "description": "A dense working- to middle-class residential township near the airport and industrial zones.",
+    "nearby_ids": [
+      "model-colony",
+      "askari",
+      "landhi",
+      "malir",
+      "airport-area"
+    ]
+  },
+  {
+    "id": "orangi-town",
+    "slug": "orangi-town",
+    "name": "Orangi Town",
+    "city": "Karachi",
+    "town": "Orangi Town",
+    "latitude": 24.945,
+    "longitude": 66.97,
+    "market_category": "affordable",
+    "description": "One of the largest low-income residential townships in Asia, characterized by dense informal housing.",
+    "nearby_ids": [
+      "ittehad-town",
+      "manghopir",
+      "baldia-town",
+      "site-area",
+      "lyari"
+    ]
+  },
+  {
+    "id": "baldia-town",
+    "slug": "baldia-town",
+    "name": "Baldia Town",
+    "city": "Karachi",
+    "town": "Baldia Town",
+    "latitude": 24.925,
+    "longitude": 66.95,
+    "market_category": "affordable",
+    "description": "A low-income residential town on Karachi's western edge, bordering SITE industrial area.",
+    "nearby_ids": [
+      "ittehad-town",
+      "orangi-town",
+      "manghopir",
+      "site-area",
+      "lyari"
+    ]
+  },
+  {
+    "id": "lyari",
+    "slug": "lyari",
+    "name": "Lyari",
+    "city": "Karachi",
+    "town": "Lyari Town",
+    "latitude": 24.885,
+    "longitude": 66.995,
+    "market_category": "affordable",
+    "description": "One of Karachi's oldest and most densely populated inner-city townships.",
+    "nearby_ids": [
+      "site-area",
+      "garden",
+      "soldier-bazaar",
+      "saddar",
+      "kharadar"
+    ]
+  },
+  {
+    "id": "saddar",
+    "slug": "saddar",
+    "name": "Saddar",
+    "city": "Karachi",
+    "town": "Saddar Town",
+    "latitude": 24.856,
+    "longitude": 67.017,
+    "market_category": "commercial",
+    "description": "Karachi's historic downtown commercial core, dense with wholesale markets, offices, and colonial-era buildings.",
+    "nearby_ids": [
+      "soldier-bazaar",
+      "garden",
+      "jamshed-quarters",
+      "kharadar",
+      "mehmoodabad"
+    ]
+  },
+  {
+    "id": "garden",
+    "slug": "garden",
+    "name": "Garden",
+    "city": "Karachi",
+    "town": "Saddar Town",
+    "latitude": 24.874,
+    "longitude": 67.023,
+    "market_category": "mid-market",
+    "description": "An older, centrally located residential-commercial neighborhood near Karachi Zoo.",
+    "nearby_ids": [
+      "soldier-bazaar",
+      "jamshed-quarters",
+      "saddar",
+      "tariq-road",
+      "lyari"
+    ]
+  },
+  {
+    "id": "gulberg",
+    "slug": "gulberg",
+    "name": "Gulberg",
+    "city": "Karachi",
+    "town": "Gulberg Town",
+    "latitude": 24.933,
+    "longitude": 67.073,
+    "market_category": "mid-market",
+    "description": "A busy residential locality near Gulshan-e-Iqbal with mixed housing and commercial strips.",
+    "nearby_ids": [
+      "federal-b-area",
+      "buffer-zone",
+      "kda-scheme-1",
+      "north-nazimabad",
+      "gulshan-e-iqbal"
+    ]
+  },
+  {
+    "id": "buffer-zone",
+    "slug": "buffer-zone",
+    "name": "Buffer Zone",
+    "city": "Karachi",
+    "town": "North Nazimabad Town",
+    "latitude": 24.955,
+    "longitude": 67.06,
+    "market_category": "mid-market",
+    "description": "A residential locality adjoining North Karachi, popular for affordable houses and apartments.",
+    "nearby_ids": [
+      "north-karachi",
+      "north-nazimabad",
+      "new-karachi",
+      "gulberg",
+      "federal-b-area"
+    ]
+  },
+  {
+    "id": "north-karachi",
+    "slug": "north-karachi",
+    "name": "North Karachi",
+    "city": "Karachi",
+    "town": "North Karachi Town",
+    "latitude": 24.97,
+    "longitude": 67.045,
+    "market_category": "affordable",
+    "description": "A large residential township in the north of the city with predominantly lower-to-middle income housing.",
+    "nearby_ids": [
+      "buffer-zone",
+      "new-karachi",
+      "north-nazimabad",
+      "surjani-town",
+      "federal-b-area"
+    ]
+  },
+  {
+    "id": "surjani-town",
+    "slug": "surjani-town",
+    "name": "Surjani Town",
+    "city": "Karachi",
+    "town": "Gadap Town",
+    "latitude": 25.01,
+    "longitude": 67.04,
+    "market_category": "affordable",
+    "description": "A rapidly growing residential township on the northern outskirts, popular for affordable plots and houses.",
+    "nearby_ids": [
+      "new-karachi",
+      "north-karachi",
+      "buffer-zone",
+      "scheme-33",
+      "north-nazimabad"
+    ]
+  },
+  {
+    "id": "new-karachi",
+    "slug": "new-karachi",
+    "name": "New Karachi",
+    "city": "Karachi",
+    "town": "New Karachi Town",
+    "latitude": 24.98,
+    "longitude": 67.065,
+    "market_category": "affordable",
+    "description": "An established working- and middle-class residential township adjacent to North Karachi.",
+    "nearby_ids": [
+      "north-karachi",
+      "buffer-zone",
+      "surjani-town",
+      "north-nazimabad",
+      "gulberg"
+    ]
+  },
+  {
+    "id": "scheme-33",
+    "slug": "scheme-33",
+    "name": "Scheme 33",
+    "city": "Karachi",
+    "town": "Gadap Town",
+    "latitude": 25.0,
+    "longitude": 67.11,
+    "market_category": "emerging",
+    "description": "A large, newer development zone on the northeastern outskirts seeing rapid housing-scheme growth.",
+    "nearby_ids": [
+      "gulzar-e-hijri",
+      "gulshan-e-maymar",
+      "new-karachi",
+      "saadi-town",
+      "university-road"
+    ]
+  },
+  {
+    "id": "gulzar-e-hijri",
+    "slug": "gulzar-e-hijri",
+    "name": "Gulzar-e-Hijri",
+    "city": "Karachi",
+    "town": "Scheme 33 area",
+    "latitude": 24.995,
+    "longitude": 67.12,
+    "market_category": "emerging",
+    "description": "A developing residential locality near Scheme 33 and Safoora, popular with newer middle-income housing.",
+    "nearby_ids": [
+      "scheme-33",
+      "gulshan-e-maymar",
+      "saadi-town",
+      "new-karachi",
+      "university-road"
+    ]
+  },
+  {
+    "id": "saadi-town",
+    "slug": "saadi-town",
+    "name": "Saadi Town",
+    "city": "Karachi",
+    "town": "Gadap Town",
+    "latitude": 24.96,
+    "longitude": 67.145,
+    "market_category": "emerging",
+    "description": "A newer residential scheme off Super Highway favored for affordable plots and houses.",
+    "nearby_ids": [
+      "university-road",
+      "gulzar-e-hijri",
+      "gulistan-e-jauhar",
+      "kda-scheme-24",
+      "scheme-33"
+    ]
+  },
+  {
+    "id": "bahria-town-karachi",
+    "slug": "bahria-town-karachi",
+    "name": "Bahria Town Karachi",
+    "city": "Karachi",
+    "town": "Kathore/Gadap area",
+    "latitude": 25.085,
+    "longitude": 67.16,
+    "market_category": "emerging",
+    "description": "A large gated master-planned community on the outskirts, marketed for modern infrastructure and amenities.",
+    "nearby_ids": [
+      "gadap-town",
+      "gulshan-e-maymar",
+      "gulzar-e-hijri",
+      "scheme-33",
+      "saadi-town"
+    ]
+  },
+  {
+    "id": "gadap-town",
+    "slug": "gadap-town",
+    "name": "Gadap Town",
+    "city": "Karachi",
+    "town": "Gadap Town",
+    "latitude": 25.1,
+    "longitude": 67.2,
+    "market_category": "emerging",
+    "description": "A large, sparsely populated rural-to-suburban town on Karachi's northern periphery undergoing gradual development.",
+    "nearby_ids": [
+      "bahria-town-karachi",
+      "gulshan-e-maymar",
+      "gulzar-e-hijri",
+      "scheme-33",
+      "saadi-town"
+    ]
+  },
+  {
+    "id": "bin-qasim",
+    "slug": "bin-qasim",
+    "name": "Bin Qasim",
+    "city": "Karachi",
+    "town": "Bin Qasim Town",
+    "latitude": 24.77,
+    "longitude": 67.32,
+    "market_category": "commercial",
+    "description": "An industrial and port-adjacent town in the far southeast, home to Port Qasim and heavy industry.",
+    "nearby_ids": [
+      "gulshan-e-hadid-town",
+      "gulshan-e-hadeed",
+      "landhi",
+      "malir",
+      "model-colony"
+    ]
+  },
+  {
+    "id": "keamari",
+    "slug": "keamari",
+    "name": "Keamari",
+    "city": "Karachi",
+    "town": "Keamari Town",
+    "latitude": 24.833,
+    "longitude": 66.98,
+    "market_category": "commercial",
+    "description": "A coastal town anchored by Karachi Port, fisheries, and dense working-class settlements.",
+    "nearby_ids": [
+      "kharadar",
+      "saddar",
+      "soldier-bazaar",
+      "clifton-block-5",
+      "clifton"
+    ]
+  },
+  {
+    "id": "site-area",
+    "slug": "site-area",
+    "name": "SITE Area",
+    "city": "Karachi",
+    "town": "SITE Town",
+    "latitude": 24.89,
+    "longitude": 66.99,
+    "market_category": "commercial",
+    "description": "Sindh Industrial Trading Estate — one of Karachi's principal industrial zones with adjoining worker housing.",
+    "nearby_ids": [
+      "lyari",
+      "garden",
+      "kharadar",
+      "soldier-bazaar",
+      "saddar"
+    ]
+  },
+  {
+    "id": "askari",
+    "slug": "askari",
+    "name": "Askari (Malir Cantonment)",
+    "city": "Karachi",
+    "town": "Malir Cantonment",
+    "latitude": 24.87,
+    "longitude": 67.16,
+    "market_category": "premium",
+    "description": "A series of well-planned cantonment housing schemes offering secure, orderly residential living.",
+    "nearby_ids": [
+      "shah-faisal-colony",
+      "airport-area",
+      "model-colony",
+      "landhi",
+      "korangi"
+    ]
+  },
+  {
+    "id": "tariq-road",
+    "slug": "tariq-road",
+    "name": "Tariq Road",
+    "city": "Karachi",
+    "town": "Jamshed Town",
+    "latitude": 24.876,
+    "longitude": 67.05,
+    "market_category": "commercial",
+    "description": "A major retail and shopping corridor adjoining PECHS and Bahadurabad.",
+    "nearby_ids": [
+      "pechs",
+      "bahadurabad",
+      "jamshed-quarters",
+      "mehmoodabad",
+      "shahrah-e-faisal"
+    ]
+  },
+  {
+    "id": "zamzama",
+    "slug": "zamzama",
+    "name": "Zamzama",
+    "city": "Karachi",
+    "town": "Clifton Town",
+    "latitude": 24.823,
+    "longitude": 67.033,
+    "market_category": "premium",
+    "description": "An upscale boutique and dining commercial strip within Clifton, adjoined by premium apartments.",
+    "nearby_ids": [
+      "clifton-block-2",
+      "boat-basin",
+      "clifton",
+      "clifton-block-5",
+      "dha-phase-1"
+    ]
+  },
+  {
+    "id": "defence-view",
+    "slug": "defence-view",
+    "name": "Defence View",
+    "city": "Karachi",
+    "town": "Defence (DHA)",
+    "latitude": 24.795,
+    "longitude": 67.035,
+    "market_category": "premium",
+    "description": "A coastal-facing residential pocket near DHA Phase 8 and the Korangi coastal belt.",
+    "nearby_ids": [
+      "dha-phase-2",
+      "dha-phase-1",
+      "clifton-block-5",
+      "clifton",
+      "boat-basin"
+    ]
+  },
+  {
+    "id": "airport-area",
+    "slug": "airport-area",
+    "name": "Airport Area (Drigh Road)",
+    "city": "Karachi",
+    "town": "Jinnah Town",
+    "latitude": 24.9,
+    "longitude": 67.16,
+    "market_category": "mixed",
+    "description": "The zone surrounding Jinnah International Airport, mixing commercial, aviation-related, and residential use.",
+    "nearby_ids": [
+      "askari",
+      "gulistan-e-jauhar",
+      "shah-faisal-colony",
+      "model-colony",
+      "malir"
+    ]
+  },
+  {
+    "id": "university-road",
+    "slug": "university-road",
+    "name": "University Road",
+    "city": "Karachi",
+    "town": "Gulshan Town",
+    "latitude": 24.935,
+    "longitude": 67.115,
+    "market_category": "mid-market",
+    "description": "A major arterial corridor linking Gulshan-e-Iqbal and North Nazimabad, lined with commercial plazas.",
+    "nearby_ids": [
+      "kda-scheme-24",
+      "gulshan-e-iqbal",
+      "gulistan-e-jauhar",
+      "kda-scheme-1",
+      "saadi-town"
+    ]
+  },
+  {
+    "id": "shahrah-e-faisal",
+    "slug": "shahrah-e-faisal",
+    "name": "Shahrah-e-Faisal Corridor",
+    "city": "Karachi",
+    "town": "Faisal Cantonment",
+    "latitude": 24.86,
+    "longitude": 67.07,
+    "market_category": "commercial",
+    "description": "Karachi's principal business corridor connecting Saddar to the airport, lined with corporate high-rises.",
+    "nearby_ids": [
+      "pechs",
+      "bahadurabad",
+      "mehmoodabad",
+      "tariq-road",
+      "jamshed-quarters"
+    ]
+  },
+  {
+    "id": "gulshan-e-hadeed",
+    "slug": "gulshan-e-hadeed",
+    "name": "Gulshan-e-Hadeed",
+    "city": "Karachi",
+    "town": "Bin Qasim Town",
+    "latitude": 24.755,
+    "longitude": 67.3,
+    "market_category": "emerging",
+    "description": "A planned township near Bin Qasim developed originally for steel mill employees, now open-market.",
+    "nearby_ids": [
+      "gulshan-e-hadid-town",
+      "bin-qasim",
+      "landhi",
+      "shah-faisal-colony",
+      "model-colony"
+    ]
+  },
+  {
+    "id": "kda-scheme-1",
+    "slug": "kda-scheme-1",
+    "name": "KDA Scheme 1",
+    "city": "Karachi",
+    "town": "Gulshan Town",
+    "latitude": 24.91,
+    "longitude": 67.085,
+    "market_category": "upper-mid",
+    "description": "A well-established KDA-developed residential scheme adjoining Gulshan-e-Iqbal.",
+    "nearby_ids": [
+      "gulshan-e-iqbal",
+      "kda-scheme-24",
+      "gulberg",
+      "federal-b-area",
+      "bahadurabad"
+    ]
+  },
+  {
+    "id": "kda-scheme-24",
+    "slug": "kda-scheme-24",
+    "name": "KDA Scheme 24",
+    "city": "Karachi",
+    "town": "Gulshan Town",
+    "latitude": 24.925,
+    "longitude": 67.105,
+    "market_category": "mid-market",
+    "description": "A residential scheme in the Gulshan corridor with a mix of houses and apartments.",
+    "nearby_ids": [
+      "gulshan-e-iqbal",
+      "university-road",
+      "kda-scheme-1",
+      "gulistan-e-jauhar",
+      "gulberg"
+    ]
+  },
+  {
+    "id": "gulshan-e-maymar",
+    "slug": "gulshan-e-maymar",
+    "name": "Gulshan-e-Maymar",
+    "city": "Karachi",
+    "town": "Gadap Town",
+    "latitude": 25.02,
+    "longitude": 67.13,
+    "market_category": "emerging",
+    "description": "A developing residential township in the northern part of the city near Northern Bypass.",
+    "nearby_ids": [
+      "gulzar-e-hijri",
+      "scheme-33",
+      "saadi-town",
+      "bahria-town-karachi",
+      "new-karachi"
+    ]
+  },
+  {
+    "id": "ittehad-town",
+    "slug": "ittehad-town",
+    "name": "Ittehad Town",
+    "city": "Karachi",
+    "town": "Baldia Town",
+    "latitude": 24.935,
+    "longitude": 66.96,
+    "market_category": "affordable",
+    "description": "A low- to middle-income residential locality adjoining Baldia and Manghopir.",
+    "nearby_ids": [
+      "baldia-town",
+      "orangi-town",
+      "manghopir",
+      "site-area",
+      "lyari"
+    ]
+  },
+  {
+    "id": "manghopir",
+    "slug": "manghopir",
+    "name": "Manghopir",
+    "city": "Karachi",
+    "town": "SITE Town",
+    "latitude": 24.955,
+    "longitude": 66.99,
+    "market_category": "affordable",
+    "description": "A semi-industrial, low-density locality on the northwestern edge known for its shrine and hot springs.",
+    "nearby_ids": [
+      "orangi-town",
+      "ittehad-town",
+      "baldia-town",
+      "north-karachi",
+      "north-nazimabad"
+    ]
+  },
+  {
+    "id": "clifton-block-2",
+    "slug": "clifton-block-2",
+    "name": "Clifton Block 2",
+    "city": "Karachi",
+    "town": "Clifton Town",
+    "latitude": 24.818,
+    "longitude": 67.033,
+    "market_category": "premium",
+    "description": "A prime residential block within Clifton featuring high-rise apartment towers.",
+    "nearby_ids": [
+      "boat-basin",
+      "zamzama",
+      "clifton",
+      "clifton-block-5",
+      "dha-phase-1"
+    ]
+  },
+  {
+    "id": "clifton-block-5",
+    "slug": "clifton-block-5",
+    "name": "Clifton Block 5",
+    "city": "Karachi",
+    "town": "Clifton Town",
+    "latitude": 24.81,
+    "longitude": 67.027,
+    "market_category": "premium",
+    "description": "A residential block of Clifton close to the beachfront and Boat Basin market.",
+    "nearby_ids": [
+      "clifton",
+      "clifton-block-2",
+      "boat-basin",
+      "dha-phase-1",
+      "zamzama"
+    ]
+  },
+  {
+    "id": "boat-basin",
+    "slug": "boat-basin",
+    "name": "Boat Basin",
+    "city": "Karachi",
+    "town": "Clifton Town",
+    "latitude": 24.817,
+    "longitude": 67.035,
+    "market_category": "premium",
+    "description": "A popular food-street and commercial hub within Clifton, surrounded by residential towers.",
+    "nearby_ids": [
+      "clifton-block-2",
+      "clifton",
+      "zamzama",
+      "clifton-block-5",
+      "dha-phase-1"
+    ]
+  },
+  {
+    "id": "gulshan-e-hadid-town",
+    "slug": "gulshan-e-hadid-town",
+    "name": "Steel Town",
+    "city": "Karachi",
+    "town": "Bin Qasim Town",
+    "latitude": 24.765,
+    "longitude": 67.31,
+    "market_category": "commercial",
+    "description": "A planned industrial township built around Pakistan Steel Mills housing and facilities.",
+    "nearby_ids": [
+      "bin-qasim",
+      "gulshan-e-hadeed",
+      "landhi",
+      "shah-faisal-colony",
+      "model-colony"
+    ]
+  },
+  {
+    "id": "jamshed-quarters",
+    "slug": "jamshed-quarters",
+    "name": "Jamshed Quarters",
+    "city": "Karachi",
+    "town": "Jamshed Town",
+    "latitude": 24.868,
+    "longitude": 67.04,
+    "market_category": "mid-market",
+    "description": "An older, centrally located residential quarter near Soldier Bazaar and Garden.",
+    "nearby_ids": [
+      "tariq-road",
+      "mehmoodabad",
+      "pechs",
+      "garden",
+      "soldier-bazaar"
+    ]
+  },
+  {
+    "id": "soldier-bazaar",
+    "slug": "soldier-bazaar",
+    "name": "Soldier Bazaar",
+    "city": "Karachi",
+    "town": "Saddar Town",
+    "latitude": 24.862,
+    "longitude": 67.023,
+    "market_category": "mid-market",
+    "description": "A historic, densely built residential-commercial neighborhood near Saddar.",
+    "nearby_ids": [
+      "saddar",
+      "garden",
+      "jamshed-quarters",
+      "mehmoodabad",
+      "tariq-road"
+    ]
+  },
+  {
+    "id": "kharadar",
+    "slug": "kharadar",
+    "name": "Kharadar",
+    "city": "Karachi",
+    "town": "Lyari Town",
+    "latitude": 24.848,
+    "longitude": 66.992,
+    "market_category": "affordable",
+    "description": "An old inner-city trading neighborhood near Native Jetty in the Lyari belt.",
+    "nearby_ids": [
+      "keamari",
+      "saddar",
+      "soldier-bazaar",
+      "lyari",
+      "garden"
+    ]
+  },
+  {
+    "id": "mehmoodabad",
+    "slug": "mehmoodabad",
+    "name": "Mehmoodabad",
+    "city": "Karachi",
+    "town": "Jamshed Town",
+    "latitude": 24.856,
+    "longitude": 67.048,
+    "market_category": "mid-market",
+    "description": "A middle-income residential-commercial neighborhood between PECHS and Shahrah-e-Faisal.",
+    "nearby_ids": [
+      "jamshed-quarters",
+      "pechs",
+      "tariq-road",
+      "shahrah-e-faisal",
+      "soldier-bazaar"
+    ]
+  }
+]

@@ -1,0 +1,97 @@
+{% extends "_base.html" %}
+{% block title %}Investment Calculator — PropertyIQ{% endblock %}
+{% block description %}Estimate mortgage payments, rental yield, and cash-on-cash return for a Karachi property investment.{% endblock %}
+{% block nav_investment %}btn-active{% endblock %}
+
+{% block content %}
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+  <div>
+    <h1 class="text-2xl sm:text-3xl font-bold mb-1">Investment Calculator</h1>
+    <p class="text-sm text-[var(--text-dim)] mb-6">Model the economics of a purchase before you commit.</p>
+
+    <form id="calc-form" class="glass rounded-xl p-5 space-y-4">
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="field-label" for="purchase_price">Purchase price (PKR)</label>
+          <input required type="number" min="0" step="1" id="purchase_price" name="purchase_price" class="field" placeholder="25000000" />
+        </div>
+        <div>
+          <label class="field-label" for="down_payment">Down payment (PKR)</label>
+          <input required type="number" min="0" step="1" id="down_payment" name="down_payment" class="field" placeholder="5000000" />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="field-label" for="interest_rate_pct">Interest rate (% / yr)</label>
+          <input required type="number" min="0" step="0.01" id="interest_rate_pct" name="interest_rate_pct" class="field" placeholder="15" />
+        </div>
+        <div>
+          <label class="field-label" for="loan_term_years">Loan term (years)</label>
+          <input required type="number" min="1" step="1" id="loan_term_years" name="loan_term_years" class="field" placeholder="20" />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="field-label" for="monthly_rent">Expected monthly rent (PKR)</label>
+          <input required type="number" min="0" step="1" id="monthly_rent" name="monthly_rent" class="field" placeholder="80000" />
+        </div>
+        <div>
+          <label class="field-label" for="monthly_maintenance">Monthly maintenance (PKR)</label>
+          <input type="number" min="0" step="1" id="monthly_maintenance" name="monthly_maintenance" class="field" placeholder="5000" />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="field-label" for="annual_taxes_fees">Annual taxes &amp; fees (PKR)</label>
+          <input type="number" min="0" step="1" id="annual_taxes_fees" name="annual_taxes_fees" class="field" placeholder="50000" />
+        </div>
+        <div>
+          <label class="field-label" for="vacancy_rate_pct">Vacancy rate (%)</label>
+          <input type="number" min="0" max="100" step="0.1" id="vacancy_rate_pct" name="vacancy_rate_pct" class="field" placeholder="5" />
+        </div>
+      </div>
+
+      <div id="calc-error" class="error-inline" hidden></div>
+
+      <button type="submit" class="btn btn-primary w-full justify-center mt-2">Calculate</button>
+    </form>
+  </div>
+
+  <div>
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="text-sm font-semibold text-[var(--text-dim)] uppercase tracking-wide">Results</h2>
+      <label class="flex items-center gap-2 text-xs text-[var(--text-dim)] cursor-pointer">
+        <input type="checkbox" id="pkr-style-toggle" checked class="accent-cyan" />
+        Lakh / Crore format
+      </label>
+    </div>
+
+    <div id="calc-results">
+      <p class="empty-inline">Enter your numbers and calculate to see results here.</p>
+    </div>
+
+    <div class="mt-4">
+      <button id="calc-save" class="btn w-full justify-center">Save this calculation</button>
+    </div>
+
+    <div class="mt-8">
+      <h2 class="text-sm font-semibold text-[var(--text-dim)] uppercase tracking-wide mb-3">Saved calculations</h2>
+      <div id="calc-saved-list" class="space-y-2"></div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module">
+  import { initCalculatorPage } from "/static/js/calculator.js";
+  initCalculatorPage({
+    form: document.getElementById("calc-form"),
+    resultsEl: document.getElementById("calc-results"),
+    errorEl: document.getElementById("calc-error"),
+    pkrStyleToggle: document.getElementById("pkr-style-toggle"),
+    saveBtn: document.getElementById("calc-save"),
+    savedListEl: document.getElementById("calc-saved-list"),
+  });
+</script>
+{% endblock %}

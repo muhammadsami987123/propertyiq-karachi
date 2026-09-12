@@ -1,0 +1,101 @@
+{% extends "_base.html" %}
+{% block title %}Explore Localities — PropertyIQ{% endblock %}
+{% block description %}Browse and search all Karachi localities tracked by PropertyIQ.{% endblock %}
+{% block nav_explore %}btn-active{% endblock %}
+
+{% block content %}
+<div class="space-y-6">
+  <div>
+    <h1 class="text-2xl sm:text-3xl font-bold">Explore Karachi Localities</h1>
+    <p class="text-sm text-[var(--text-dim)] mt-1">A text-based way to reach any location — no map required.</p>
+  </div>
+
+  <div class="flex flex-col sm:flex-row gap-3">
+    <div class="flex-1">
+      <label for="explore-search" class="sr-only">Search localities</label>
+      <input id="explore-search" type="search" placeholder="Search by name or town…" class="field" autocomplete="off" />
+    </div>
+    <select id="explore-category" class="field sm:w-56">
+      <option value="">All market categories</option>
+    </select>
+  </div>
+
+  <div id="explore-live" class="sr-only" aria-live="polite"></div>
+  <div id="explore-status"></div>
+  <div id="explore-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module">
+  import { api } from "/static/js/api.js";
+  import { debounce } from "/static/js/format.js";
+
+  const grid = document.getElementById("explore-grid");
+  const status = document.getElementById("explore-status");
+  const live = document.getElementById("explore-live");
+  const searchInput = document.getElementById("explore-search");
+  const categorySelect = document.getElementById("explore-category");
+
+  let all = [];
+
+  function escapeHtml(s) {
+    return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  }
+
+  function render(list) {
+    grid.innerHTML = "";
+    if (list.length === 0) {
+      grid.innerHTML = `<p class="empty-inline col-span-full">No localities match your search.</p>`;
+      live.textContent = "No results.";
+      return;
+    }
+    live.textContent = `${list.length} localities found.`;
+    list.forEach((loc) => {
+      const card = document.createElement("a");
+      card.href = `/karachi/${encodeURIComponent(loc.slug)}`;
+      card.className = "glass rounded-xl p-4 flex flex-col gap-2 hover:border-white/30 transition-colors duration-200 min-h-[44px]";
+      card.innerHTML = `
+        <div class="flex items-start justify-between gap-2">
+          <div>
+            <div class="font-semibold">${escapeHtml(loc.name)}</div>
+            <div class="text-xs text-[var(--text-dim)]">${escapeHtml(loc.town || "")}</div>
+          </div>
+          <span class="badge badge-demo shrink-0">${escapeHtml(loc.market_category || "—")}</span>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  function applyFilters() {
+    const q = searchInput.value.trim().toLowerCase();
+    const cat = categorySelect.value;
+    const filtered = all.filter((loc) => {
+      const matchesQ = !q || loc.name.toLowerCase().includes(q) || (loc.town || "").toLowerCase().includes(q);
+      const matchesCat = !cat || loc.market_category === cat;
+      return matchesQ && matchesCat;
+    });
+    render(filtered);
+  }
+
+  searchInput.addEventListener("input", debounce(applyFilters, 150));
+  categorySelect.addEventListener("change", applyFilters);
+
+  (async () => {
+    const res = await api.locations();
+    if (!res.ok || !res.data) {
+      status.innerHTML = `<p class="error-inline">Locality data is currently unavailable. Please try again shortly.</p>`;
+      return;
+    }
+    all = res.data;
+    const categories = [...new Set(all.map((l) => l.market_category).filter(Boolean))].sort();
+    categories.forEach((c) => {
+      const opt = document.createElement("option");
+      opt.value = c; opt.textContent = c;
+      categorySelect.appendChild(opt);
+    });
+    render(all);
+  })();
+</script>
+{% endblock %}

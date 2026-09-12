@@ -1,0 +1,58 @@
+[
+  {
+    "id": "zameen-insights",
+    "name": "Zameen.com Karachi Market Listings (general reference)",
+    "url": "https://www.zameen.com/Karachi-2-1.html",
+    "type": "portal",
+    "description": "Publicly visible listing price ranges referenced for general market positioning; no automated scraping performed.",
+    "terms_note": "Used for general orientation only; all figures in this dataset are manually researched estimates, not extracted or scraped data."
+  },
+  {
+    "id": "graana-insights",
+    "name": "Graana.com Karachi Property Listings (general reference)",
+    "url": "https://www.graana.com/karachi/",
+    "type": "portal",
+    "description": "General public listing pages browsed for a broad sense of asking-price ranges across Karachi localities.",
+    "terms_note": "Referenced for general orientation only; no scraping or bulk extraction was performed. Figures here are independent estimates."
+  },
+  {
+    "id": "zameen-property-index",
+    "name": "Zameen.com Property Listings (general reference)",
+    "url": "https://www.zameen.com/Property/karachi.html",
+    "type": "portal",
+    "description": "General listings browsed for property-type mix and typical unit sizes across Karachi neighborhoods.",
+    "terms_note": "General orientation only; not a data feed or scrape."
+  },
+  {
+    "id": "general-market-commentary",
+    "name": "General Karachi Real Estate Market Commentary",
+    "url": null,
+    "type": "report",
+    "description": "Synthesis of widely circulated general commentary on Karachi real estate trends (e.g. DHA/Clifton appreciation, Gulshan corridor demand) known from public discourse, not a specific citable report.",
+    "terms_note": "Reflects general publicly known market sentiment; not tied to a specific proprietary report."
+  },
+  {
+    "id": "local-market-knowledge",
+    "name": "General Local Market Knowledge Synthesis",
+    "url": null,
+    "type": "research",
+    "description": "Aggregated general knowledge of Karachi neighborhood reputations, administrative town boundaries, and relative price positioning.",
+    "terms_note": "This dataset is a manually curated research-estimate compilation, not a live or verified transaction feed."
+  },
+  {
+    "id": "administrative-town-reference",
+    "name": "Karachi Administrative Towns General Reference",
+    "url": null,
+    "type": "research",
+    "description": "General public knowledge of Karachi's administrative town/zone structure used to tag localities to their town.",
+    "terms_note": "General knowledge synthesis; not an official cadastral or government dataset."
+  },
+  {
+    "id": "graana-blog-insights",
+    "name": "Graana.com Market Insights Blog (general reference)",
+    "url": "https://www.graana.com/blog/",
+    "type": "report",
+    "description": "General blog-style market commentary occasionally referenced for qualitative trend direction (e.g. appreciation in DHA/Clifton).",
+    "terms_note": "General orientation only; treated as informal commentary, not verified statistical reporting."
+  }
+]

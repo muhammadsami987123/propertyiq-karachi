@@ -1,0 +1,50 @@
+{% extends "_base.html" %}
+{% block title %}Compare Localities — PropertyIQ{% endblock %}
+{% block description %}Compare sale price, rent, yield and market trend across Karachi localities.{% endblock %}
+{% block nav_compare %}btn-active{% endblock %}
+
+{% block head %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="space-y-6">
+  <div>
+    <h1 class="text-2xl sm:text-3xl font-bold">Compare Localities</h1>
+    <p class="text-sm text-[var(--text-dim)] mt-1">Add 2–4 locations to compare price, yield and market confidence side by side.</p>
+  </div>
+
+  <div class="relative max-w-md">
+    <label for="compare-search" class="sr-only">Search a locality to add</label>
+    <input id="compare-search" type="search" placeholder="Search a locality to add…" class="field" autocomplete="off" />
+    <ul id="compare-search-results" role="listbox" hidden class="absolute mt-1 left-0 right-0 glass-raised rounded-lg overflow-hidden max-h-72 overflow-y-auto z-20"></ul>
+    <div id="compare-search-live" class="sr-only" aria-live="polite"></div>
+  </div>
+
+  <div id="compare-chips" class="flex flex-wrap gap-2"></div>
+
+  <p id="compare-empty" class="empty-inline">Add at least two locations to see a comparison.</p>
+
+  <div id="compare-table-wrap" class="glass rounded-xl overflow-x-auto"></div>
+
+  <div class="glass rounded-xl p-4">
+    <h2 class="text-sm font-semibold mb-3">Price per sq ft comparison</h2>
+    <canvas id="compare-chart" hidden height="120"></canvas>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module">
+  import { initComparePage } from "/static/js/compare.js";
+  initComparePage({
+    searchInput: document.getElementById("compare-search"),
+    searchResults: document.getElementById("compare-search-results"),
+    searchLive: document.getElementById("compare-search-live"),
+    chipsEl: document.getElementById("compare-chips"),
+    tableWrap: document.getElementById("compare-table-wrap"),
+    chartCanvas: document.getElementById("compare-chart"),
+    emptyEl: document.getElementById("compare-empty"),
+  });
+</script>
+{% endblock %}

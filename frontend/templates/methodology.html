@@ -1,0 +1,81 @@
+{% extends "_base.html" %}
+{% block title %}Methodology — PropertyIQ{% endblock %}
+{% block description %}How PropertyIQ classifies data, measures confidence, and where the limitations lie.{% endblock %}
+{% block nav_methodology %}btn-active{% endblock %}
+
+{% block mainclass %}max-w-3xl mx-auto px-4 sm:px-6 py-10{% endblock %}
+{% block content %}
+<article class="space-y-10">
+  <header>
+    <h1 class="text-2xl sm:text-3xl font-bold">Methodology</h1>
+    <p class="text-sm text-[var(--text-dim)] mt-2">
+      PropertyIQ is built on the principle that a number is only useful if you know how confident to be in it.
+      This page explains how our data is classified, how confidence is calculated, and where the honest limits are.
+    </p>
+  </header>
+
+  <section class="space-y-4">
+    <h2 class="text-lg font-semibold">Data types</h2>
+    <p class="text-sm text-[var(--text-dim)] leading-relaxed">
+      Every figure in PropertyIQ is tagged with a data type. We do not blend these silently — the type is always visible
+      next to the number it describes.
+    </p>
+    <div class="grid gap-3">
+      <div class="glass rounded-lg p-4">
+        <div class="flex items-center gap-2 mb-1"><span class="badge badge-high">Verified</span></div>
+        <p class="text-sm text-[var(--text-dim)]">Sourced from a documented transaction, registered listing, or an authoritative
+        third-party record we can trace to origin. Verified figures carry the highest weight in any comparison or calculation.</p>
+      </div>
+      <div class="glass rounded-lg p-4">
+        <div class="flex items-center gap-2 mb-1"><span class="badge badge-medium">Research estimate</span></div>
+        <p class="text-sm text-[var(--text-dim)]">Derived from multiple listings, agent input, or aggregated public sources,
+        cross-checked for plausibility but not independently verified against a single authoritative record. This is the
+        majority of what you will see on the platform, and it is labeled as such rather than presented as fact.</p>
+      </div>
+      <div class="glass rounded-lg p-4">
+        <div class="flex items-center gap-2 mb-1"><span class="badge badge-demo">Demo</span></div>
+        <p class="text-sm text-[var(--text-dim)]">Placeholder or illustrative data used where real observations do not yet
+        exist for a locality or property type. Demo data is never used to support an investment decision and is always
+        marked as demo, never blended with real figures.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="space-y-4">
+    <h2 class="text-lg font-semibold">How confidence is determined</h2>
+    <p class="text-sm text-[var(--text-dim)] leading-relaxed">
+      Each market record carries a confidence level — High, Medium, or Low — computed from five factors:
+    </p>
+    <ol class="list-decimal list-inside text-sm text-[var(--text-dim)] space-y-2 leading-relaxed">
+      <li><strong class="text-[var(--text)]">Observations</strong> — how many independent data points support the figure.
+      A range built from a handful of listings is treated with more caution than one built from dozens.</li>
+      <li><strong class="text-[var(--text)]">Source quality</strong> — whether the source is a registered transaction,
+      an established listing platform, an agent estimate, or an unverifiable secondary reference.</li>
+      <li><strong class="text-[var(--text)]">Freshness</strong> — how recently the data was collected or updated. Karachi's
+      market moves quickly; a figure from two years ago is treated differently than one from last month.</li>
+      <li><strong class="text-[var(--text)]">Geographic specificity</strong> — whether the figure applies to the exact
+      locality, or is inferred from a wider town-level or district-level average.</li>
+      <li><strong class="text-[var(--text)]">Consistency</strong> — how closely independent observations agree with each
+      other. Wide disagreement between sources lowers confidence even with many observations.</li>
+    </ol>
+    <p class="text-sm text-[var(--text-dim)] leading-relaxed">
+      The confidence explanation attached to each locality's market data spells out which of these factors drove the
+      rating for that specific figure — it is not a generic disclaimer.
+    </p>
+  </section>
+
+  <section class="space-y-4">
+    <h2 class="text-lg font-semibold">Limitations</h2>
+    <ul class="list-disc list-inside text-sm text-[var(--text-dim)] space-y-2 leading-relaxed">
+      <li>Karachi does not have a centralized, publicly queryable property transaction registry. Every figure here is
+      built from the best available secondary evidence, not from a ground-truth ledger.</li>
+      <li>Historical trend lines are only shown where enough consistent observations exist over time. Where they don't,
+      the platform says so explicitly rather than drawing a misleading line through sparse data.</li>
+      <li>Market categorizations (e.g. "high-growth", "stable") are relative to other tracked Karachi localities, not an
+      absolute national or international benchmark.</li>
+      <li>PropertyIQ is an intelligence layer, not a valuation service or a substitute for a licensed surveyor, lawyer,
+      or financial advisor before a transaction.</li>
+    </ul>
+  </section>
+</article>
+{% endblock %}

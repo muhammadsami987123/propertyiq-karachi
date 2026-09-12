@@ -1,0 +1,205 @@
+{% extends "_base.html" %}
+{% block title %}{% block loc_title %}Locality{% endblock %} — PropertyIQ{% endblock %}
+{% block description %}Sale, rental, and market intelligence for a Karachi locality.{% endblock %}
+
+{% block head %}
+<link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
+<script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script id="loc-context" type="application/json">{ "slug": {{ slug | default("") | tojson }} }</script>
+{% endblock %}
+
+{% block content %}
+<div id="loc-loading" class="space-y-4">
+  <div class="skeleton h-8 w-1/2"></div>
+  <div class="skeleton h-4 w-1/3"></div>
+  <div class="skeleton h-64 w-full rounded-xl"></div>
+</div>
+
+<div id="loc-notfound" hidden class="text-center py-24 space-y-3">
+  <h1 class="text-2xl font-bold">Location not found</h1>
+  <p class="text-sm text-[var(--text-dim)]">We couldn't find a Karachi locality matching this address.</p>
+  <a href="/explore" class="btn btn-primary inline-flex mt-2">Browse all localities</a>
+</div>
+
+<div id="loc-content" hidden class="space-y-8">
+  <header class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+    <div>
+      <h1 id="loc-name" class="text-2xl sm:text-3xl font-bold"></h1>
+      <p id="loc-town" class="text-sm text-[var(--text-dim)] mt-1"></p>
+    </div>
+    <span id="loc-category" class="badge badge-demo"></span>
+  </header>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div class="lg:col-span-2 space-y-6">
+      <section>
+        <h2 class="text-sm font-semibold text-[var(--text-dim)] uppercase tracking-wide mb-3">Sale market</h2>
+        <div id="loc-sale" class="grid sm:grid-cols-2 gap-3"></div>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-[var(--text-dim)] uppercase tracking-wide mb-3">Rental market</h2>
+        <div id="loc-rent" class="grid sm:grid-cols-2 gap-3"></div>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-[var(--text-dim)] uppercase tracking-wide mb-3">Market trend</h2>
+        <div id="loc-trend" class="glass rounded-xl p-4"></div>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-[var(--text-dim)] uppercase tracking-wide mb-3">Investment metrics summary</h2>
+        <div id="loc-invest" class="glass rounded-xl p-4"></div>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-[var(--text-dim)] uppercase tracking-wide mb-3">Data sources</h2>
+        <div id="loc-sources" class="text-xs text-[var(--text-dim)] space-y-1"></div>
+      </section>
+    </div>
+
+    <div class="space-y-6">
+      <div id="loc-minimap" class="glass rounded-xl overflow-hidden" style="height:260px; position:relative;"></div>
+
+      <div class="glass rounded-xl p-4">
+        <h2 class="text-sm font-semibold text-[var(--text-dim)] uppercase tracking-wide mb-3">Nearby areas</h2>
+        <div id="loc-nearby" class="flex flex-wrap gap-2"></div>
+      </div>
+
+      <a href="/compare" class="btn btn-primary w-full justify-center">Compare with other areas →</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module">
+  import { api } from "/static/js/api.js";
+  import { formatRange } from "/static/js/format.js";
+  import { renderTrendChart } from "/static/js/charts.js";
+
+  function escapeHtml(s) {
+    return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  }
+
+  const ctxEl = document.getElementById("loc-context");
+  let slug = "";
+  try { slug = JSON.parse(ctxEl.textContent).slug || ""; } catch (_) {}
+  if (!slug) {
+    // fallback: derive from URL /karachi/{slug}
+    const parts = window.location.pathname.split("/").filter(Boolean);
+    slug = parts[parts.length - 1] || "";
+  }
+
+  const loadingEl = document.getElementById("loc-loading");
+  const notfoundEl = document.getElementById("loc-notfound");
+  const contentEl = document.getElementById("loc-content");
+
+  function confidenceBadgeClass(level) {
+    const l = String(level || "").toLowerCase();
+    if (l.includes("high")) return "badge-high";
+    if (l.includes("medium")) return "badge-medium";
+    if (l.includes("low")) return "badge-low";
+    return "badge-demo";
+  }
+
+  function recordCard(r) {
+    return `
+      <div class="glass rounded-lg p-4">
+        <div class="flex items-center justify-between mb-1">
+          <span class="text-sm font-medium">${escapeHtml(r.property_type || "Property")}</span>
+          <span class="badge ${confidenceBadgeClass(r.confidence)}">${escapeHtml(r.confidence || "—")}</span>
+        </div>
+        <div class="text-base font-semibold text-mono-num">${formatRange(r.price_min, r.price_max)}</div>
+        ${r.price_per_sqft_min ? `<div class="text-xs text-[var(--text-dim)] mt-1">${formatRange(r.price_per_sqft_min, r.price_per_sqft_max)} / sq ft</div>` : ""}
+        <div class="text-[11px] text-[var(--text-faint)] mt-2">${escapeHtml(r.source || "Source unspecified")}</div>
+      </div>
+    `;
+  }
+
+  (async () => {
+    if (!slug) { loadingEl.hidden = true; notfoundEl.hidden = false; return; }
+
+    const [locRes, marketRes] = await Promise.all([api.location(slug), api.locationMarket(slug)]);
+    loadingEl.hidden = true;
+
+    if (!locRes.ok) {
+      notfoundEl.hidden = false;
+      return;
+    }
+    contentEl.hidden = false;
+    const loc = locRes.data;
+
+    document.getElementById("loc-name").textContent = loc.name || "Unknown locality";
+    document.getElementById("loc-town").textContent = loc.town || "";
+    const catEl = document.getElementById("loc-category");
+    catEl.textContent = loc.market_category || "—";
+    catEl.className = "badge " + confidenceBadgeClass(loc.market_category);
+    document.title = (loc.name || "Locality") + " — PropertyIQ";
+
+    const market = marketRes.ok ? marketRes.data : null;
+    const saleEl = document.getElementById("loc-sale");
+    const rentEl = document.getElementById("loc-rent");
+    if (!market) {
+      const msg = `<p class="error-inline col-span-full">Market data is currently unavailable for this locality.</p>`;
+      saleEl.innerHTML = msg;
+      rentEl.innerHTML = msg;
+    } else {
+      saleEl.innerHTML = (market.sale || []).map(recordCard).join("") || `<p class="empty-inline col-span-full">No sale data available.</p>`;
+      rentEl.innerHTML = (market.rent || []).map(recordCard).join("") || `<p class="empty-inline col-span-full">No rental data available.</p>`;
+    }
+
+    renderTrendChart(document.getElementById("loc-trend"), market?.trends);
+
+    // Investment metrics summary (best-effort from sale/rent averages)
+    const investEl = document.getElementById("loc-invest");
+    const saleAvg = market?.sale?.[0];
+    const rentAvg = market?.rent?.[0];
+    if (saleAvg && rentAvg && saleAvg.price_avg && rentAvg.price_avg) {
+      const grossYield = ((rentAvg.price_avg * 12) / saleAvg.price_avg) * 100;
+      investEl.innerHTML = `
+        <div class="grid grid-cols-2 gap-4">
+          <div><div class="text-xs text-[var(--text-dim)]">Est. gross yield</div><div class="text-lg font-semibold text-mono-num">${grossYield.toFixed(1)}%</div></div>
+          <div><div class="text-xs text-[var(--text-dim)]">Avg sale price</div><div class="text-lg font-semibold text-mono-num">${formatRange(saleAvg.price_avg, saleAvg.price_avg)}</div></div>
+        </div>
+        <a href="/investment" class="btn mt-4 inline-flex">Run full calculator →</a>
+      `;
+    } else {
+      investEl.innerHTML = `<p class="empty-inline">Insufficient data to summarize investment metrics for this locality.</p><a href="/investment" class="btn mt-3 inline-flex">Open calculator →</a>`;
+    }
+
+    // Data sources
+    const sourcesEl = document.getElementById("loc-sources");
+    const allRecords = [...(market?.sale || []), ...(market?.rent || [])];
+    const sources = [...new Set(allRecords.map((r) => r.source).filter(Boolean))];
+    sourcesEl.innerHTML = sources.length
+      ? sources.map((s) => `<div>• ${escapeHtml(s)}</div>`).join("")
+      : `<div>No sources recorded.</div>`;
+
+    // Nearby areas
+    const nearbyEl = document.getElementById("loc-nearby");
+    const nearby = loc.nearby || [];
+    nearbyEl.innerHTML = nearby.length
+      ? nearby.map((n) => `<a href="/karachi/${encodeURIComponent(n.slug)}" class="chip">${escapeHtml(n.name)}</a>`).join("")
+      : `<p class="text-xs text-[var(--text-dim)]">No nearby areas recorded.</p>`;
+
+    // Mini map
+    if (loc.latitude && loc.longitude) {
+      const miniMap = new maplibregl.Map({
+        container: "loc-minimap",
+        style: "https://tiles.openfreemap.org/styles/liberty",
+        center: [loc.longitude, loc.latitude],
+        zoom: 13,
+        interactive: true,
+        attributionControl: false,
+      });
+      miniMap.on("load", () => {
+        new maplibregl.Marker({ color: "#22d3ee" }).setLngLat([loc.longitude, loc.latitude]).addTo(miniMap);
+      });
+    } else {
+      document.getElementById("loc-minimap").innerHTML = `<div class="p-4 text-xs text-[var(--text-dim)]">Map position unavailable.</div>`;
+    }
+  })();
+</script>
+{% endblock %}

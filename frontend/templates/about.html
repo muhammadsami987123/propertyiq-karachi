@@ -1,0 +1,44 @@
+{% extends "_base.html" %}
+{% block title %}About — PropertyIQ{% endblock %}
+{% block description %}PropertyIQ is a visual intelligence layer for Karachi's real-estate market.{% endblock %}
+{% block nav_about %}btn-active{% endblock %}
+
+{% block mainclass %}max-w-3xl mx-auto px-4 sm:px-6 py-10{% endblock %}
+{% block content %}
+<article class="space-y-8">
+  <header>
+    <h1 class="text-2xl sm:text-3xl font-bold">About PropertyIQ</h1>
+  </header>
+
+  <section class="space-y-4 text-sm text-[var(--text-dim)] leading-relaxed">
+    <p>
+      PropertyIQ is a visual intelligence layer for Karachi's real-estate market — a way to see how price, rent, and
+      market momentum vary block by block across the city, and to understand how confident to be in each figure.
+    </p>
+    <p>
+      It is <strong class="text-[var(--text)]">not a listings site</strong>. You will not find individual properties
+      for sale or rent here, and PropertyIQ has no commercial relationship with any listing, agent, or developer.
+    </p>
+    <p>
+      It is <strong class="text-[var(--text)]">not a chatbot</strong>. There is no assistant to converse with — the
+      product is the map, the numbers, and the transparency around where those numbers come from.
+    </p>
+    <p>
+      What it is: a single place to explore, compare, and reason about Karachi localities using the best available
+      market data, an investment calculator grounded in real inputs, and a methodology that says plainly what we know,
+      what we estimate, and what we don't know yet.
+    </p>
+  </section>
+
+  <section class="glass rounded-xl p-5">
+    <h2 class="text-sm font-semibold mb-2">Where to start</h2>
+    <div class="flex flex-wrap gap-2">
+      <a href="/" class="btn">Explore the map</a>
+      <a href="/explore" class="btn">Browse localities</a>
+      <a href="/compare" class="btn">Compare areas</a>
+      <a href="/investment" class="btn">Run the calculator</a>
+      <a href="/methodology" class="btn">Read the methodology</a>
+    </div>
+  </section>
+</article>
+{% endblock %}

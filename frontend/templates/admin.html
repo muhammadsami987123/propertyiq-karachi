@@ -1,0 +1,185 @@
+{% extends "_base.html" %}
+{% block title %}Admin — PropertyIQ{% endblock %}
+{% block description %}Internal data management for PropertyIQ.{% endblock %}
+
+{% block mainclass %}max-w-5xl mx-auto px-4 sm:px-6 py-10{% endblock %}
+{% block content %}
+<div class="space-y-8">
+  <header>
+    <h1 class="text-2xl font-bold">Admin</h1>
+    <p class="text-sm text-[var(--text-dim)] mt-1">Internal data-management tool. Not part of the public product surface.</p>
+  </header>
+
+  <section class="glass rounded-xl p-5">
+    <label class="field-label" for="admin-token">Admin token</label>
+    <div class="flex gap-2 max-w-md">
+      <input id="admin-token" type="password" class="field" placeholder="Paste admin token…" autocomplete="off" />
+      <button id="admin-token-set" class="btn btn-primary">Set</button>
+    </div>
+    <p id="admin-token-status" class="text-xs text-[var(--text-dim)] mt-2">No token set for this session.</p>
+    <p class="text-[11px] text-[var(--text-faint)] mt-1">Stored in memory for this tab only. Never persisted or logged.</p>
+  </section>
+
+  <section class="glass rounded-xl p-5 space-y-4">
+    <h2 class="text-sm font-semibold">Add / edit location</h2>
+    <form id="loc-form" class="grid sm:grid-cols-2 gap-3">
+      <div><label class="field-label" for="f-name">Name</label><input id="f-name" name="name" class="field" required /></div>
+      <div><label class="field-label" for="f-slug">Slug</label><input id="f-slug" name="slug" class="field" required /></div>
+      <div><label class="field-label" for="f-town">Town</label><input id="f-town" name="town" class="field" /></div>
+      <div><label class="field-label" for="f-category">Market category</label><input id="f-category" name="market_category" class="field" /></div>
+      <div><label class="field-label" for="f-lat">Latitude</label><input id="f-lat" name="latitude" type="number" step="any" class="field" /></div>
+      <div><label class="field-label" for="f-lng">Longitude</label><input id="f-lng" name="longitude" type="number" step="any" class="field" /></div>
+      <div class="sm:col-span-2"><button type="submit" class="btn btn-primary">Submit location</button></div>
+    </form>
+    <div id="loc-form-result"></div>
+  </section>
+
+  <section class="glass rounded-xl p-5 space-y-4">
+    <h2 class="text-sm font-semibold">Add / update market record</h2>
+    <form id="market-form" class="grid sm:grid-cols-2 gap-3">
+      <div><label class="field-label" for="m-loc-id">Location ID</label><input id="m-loc-id" name="location_id" class="field" required /></div>
+      <div><label class="field-label" for="m-type">Property type</label><input id="m-type" name="property_type" class="field" required /></div>
+      <div><label class="field-label" for="m-txn">Transaction type</label>
+        <select id="m-txn" name="transaction_type" class="field"><option value="sale">Sale</option><option value="rent">Rent</option></select>
+      </div>
+      <div><label class="field-label" for="m-conf">Confidence</label>
+        <select id="m-conf" name="confidence" class="field"><option>High</option><option>Medium</option><option>Low</option></select>
+      </div>
+      <div><label class="field-label" for="m-min">Price min</label><input id="m-min" name="price_min" type="number" class="field" /></div>
+      <div><label class="field-label" for="m-max">Price max</label><input id="m-max" name="price_max" type="number" class="field" /></div>
+      <div class="sm:col-span-2"><label class="field-label" for="m-source">Source</label><input id="m-source" name="source" class="field" /></div>
+      <div class="sm:col-span-2"><button type="submit" class="btn btn-primary">Submit market record</button></div>
+    </form>
+    <div id="market-form-result"></div>
+  </section>
+
+  <section class="glass rounded-xl p-5 space-y-4">
+    <h2 class="text-sm font-semibold">Bulk import</h2>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <div>
+        <label class="field-label" for="csv-file">CSV file</label>
+        <input id="csv-file" type="file" accept=".csv" class="field" />
+        <button id="csv-upload" class="btn mt-2">Upload CSV</button>
+        <div id="csv-result" class="mt-2"></div>
+      </div>
+      <div>
+        <label class="field-label" for="geojson-file">GeoJSON file</label>
+        <input id="geojson-file" type="file" accept=".json,.geojson" class="field" />
+        <button id="geojson-upload" class="btn mt-2">Upload GeoJSON</button>
+        <div id="geojson-result" class="mt-2"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="glass rounded-xl p-5 space-y-3">
+    <div class="flex items-center justify-between">
+      <h2 class="text-sm font-semibold">Data sources (read-only)</h2>
+      <button id="sources-refresh" class="btn">Refresh</button>
+    </div>
+    <div id="sources-list" class="text-sm text-[var(--text-dim)]"></div>
+  </section>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module">
+  import { api } from "/static/js/api.js";
+
+  function escapeHtml(s) {
+    return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  }
+
+  let token = null; // in-memory only, never persisted
+
+  const tokenInput = document.getElementById("admin-token");
+  const tokenStatus = document.getElementById("admin-token-status");
+  document.getElementById("admin-token-set").addEventListener("click", () => {
+    token = tokenInput.value.trim() || null;
+    tokenStatus.textContent = token ? "Token set for this session." : "No token set for this session.";
+    tokenInput.value = "";
+  });
+
+  function requireToken(resultEl) {
+    if (!token) {
+      resultEl.innerHTML = `<p class="error-inline">Set an admin token before submitting.</p>`;
+      return false;
+    }
+    return true;
+  }
+
+  document.getElementById("loc-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const resultEl = document.getElementById("loc-form-result");
+    if (!requireToken(resultEl)) return;
+    const fd = new FormData(e.target);
+    const payload = Object.fromEntries(fd.entries());
+    if (payload.latitude) payload.latitude = Number(payload.latitude);
+    if (payload.longitude) payload.longitude = Number(payload.longitude);
+    const res = await api.adminAddLocation(token, payload);
+    resultEl.innerHTML = res.ok
+      ? `<p class="text-sm" style="color:var(--good)">Location saved.</p>`
+      : `<p class="error-inline">${escapeHtml(res.error || "Failed to save location.")}</p>`;
+  });
+
+  document.getElementById("market-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const resultEl = document.getElementById("market-form-result");
+    if (!requireToken(resultEl)) return;
+    const fd = new FormData(e.target);
+    const payload = Object.fromEntries(fd.entries());
+    if (payload.price_min) payload.price_min = Number(payload.price_min);
+    if (payload.price_max) payload.price_max = Number(payload.price_max);
+    const res = await api.adminAddMarket(token, payload);
+    resultEl.innerHTML = res.ok
+      ? `<p class="text-sm" style="color:var(--good)">Market record saved.</p>`
+      : `<p class="error-inline">${escapeHtml(res.error || "Failed to save market record.")}</p>`;
+  });
+
+  document.getElementById("csv-upload").addEventListener("click", async () => {
+    const resultEl = document.getElementById("csv-result");
+    if (!requireToken(resultEl)) return;
+    const file = document.getElementById("csv-file").files[0];
+    if (!file) { resultEl.innerHTML = `<p class="error-inline">Choose a CSV file first.</p>`; return; }
+    resultEl.innerHTML = `<p class="text-xs text-[var(--text-dim)]">Uploading…</p>`;
+    const res = await api.adminImportCsv(token, file);
+    renderImportResult(resultEl, res);
+  });
+
+  document.getElementById("geojson-upload").addEventListener("click", async () => {
+    const resultEl = document.getElementById("geojson-result");
+    if (!requireToken(resultEl)) return;
+    const file = document.getElementById("geojson-file").files[0];
+    if (!file) { resultEl.innerHTML = `<p class="error-inline">Choose a GeoJSON file first.</p>`; return; }
+    resultEl.innerHTML = `<p class="text-xs text-[var(--text-dim)]">Uploading…</p>`;
+    const res = await api.adminImportGeojson(token, file);
+    renderImportResult(resultEl, res);
+  });
+
+  function renderImportResult(resultEl, res) {
+    if (!res.ok) {
+      resultEl.innerHTML = `<p class="error-inline">${escapeHtml(res.error || "Import failed.")}</p>`;
+      return;
+    }
+    const d = res.data || {};
+    const errors = d.errors || d.row_errors || [];
+    let html = `<p class="text-sm" style="color:var(--good)">Imported ${escapeHtml(d.imported ?? d.count ?? "—")} rows.</p>`;
+    if (errors.length) {
+      html += `<div class="mt-2 text-xs text-[var(--danger)] space-y-0.5">${errors.slice(0, 20).map((er) => `<div>${escapeHtml(typeof er === "string" ? er : JSON.stringify(er))}</div>`).join("")}</div>`;
+    }
+    resultEl.innerHTML = html;
+  }
+
+  async function loadSources() {
+    const el = document.getElementById("sources-list");
+    if (!token) { el.innerHTML = `<p class="empty-inline">Set an admin token to view sources.</p>`; return; }
+    el.innerHTML = `<p class="text-xs">Loading…</p>`;
+    const res = await api.adminSources(token);
+    if (!res.ok) { el.innerHTML = `<p class="error-inline">${escapeHtml(res.error || "Unable to load sources.")}</p>`; return; }
+    const list = res.data || [];
+    el.innerHTML = list.length
+      ? `<ul class="space-y-1">${list.map((s) => `<li>• ${escapeHtml(typeof s === "string" ? s : (s.name || JSON.stringify(s)))}</li>`).join("")}</ul>`
+      : `<p class="empty-inline">No sources recorded.</p>`;
+  }
+  document.getElementById("sources-refresh").addEventListener("click", loadSources);
+</script>
+{% endblock %}
